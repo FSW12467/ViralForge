@@ -53,11 +53,11 @@
     }
 
     .tools {
-      max-width: 900px;
+      max-width: 950px;
       margin: 20px auto 60px;
       padding: 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
     }
 
@@ -66,31 +66,60 @@
       border: 1px solid #29293a;
       border-radius: 16px;
       padding: 25px;
-      text-align: center;
     }
 
     .tool h2 {
       margin-bottom: 10px;
       font-size: 21px;
+      text-align: center;
     }
 
     .tool p {
       color: #999;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin: 7px 0;
+      border-radius: 10px;
+      border: 1px solid #333;
+      background: #0b0b12;
+      color: white;
+      outline: none;
     }
 
     button {
       border: none;
-      padding: 12px 20px;
+      padding: 12px 18px;
+      margin-top: 8px;
       border-radius: 10px;
       background: white;
       color: black;
       font-weight: bold;
       cursor: pointer;
+      width: 100%;
     }
 
     button:hover {
       opacity: 0.85;
+    }
+
+    .result {
+      margin-top: 16px;
+      padding: 14px;
+      background: #0b0b12;
+      border-radius: 10px;
+      color: #ddd;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .copy {
+      display: none;
     }
 
     footer {
@@ -99,198 +128,125 @@
       border-top: 1px solid #252535;
       color: #777;
     }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .tools {
+        padding: 15px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">🔥 ViralForge</div>
-    <div class="tagline">Free tools built for creators.</div>
-  </header>
+<header>
+  <div class="logo">🔥 ViralForge</div>
+  <div class="tagline">Free tools built for creators.</div>
+</header>
 
-  <section class="hero">
-    <h1>Create. Improve. Go Viral.</h1>
-    <p>Free tools for captions, hooks, titles, bios and hashtags.</p>
-  </section>
+<section class="hero">
+  <h1>Create. Improve. Go Viral.</h1>
+  <p>Free tools for captions, hooks, titles, bios and hashtags.</p>
+</section>
 
-  <section class="tools">
+<section class="tools">
 
-    <div class="tool">
-  <h2>📝 Caption Generator</h2>
-  <p>Create captions for your social media posts.</p>
+  <!-- CAPTION GENERATOR -->
+  <div class="tool">
+    <h2>📝 Caption Generator</h2>
+    <p>Create captions for your social media posts.</p>
 
-  <input
-    type="text"
-    id="captionTopic"
-    placeholder="Enter your topic..."
-    style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #333; background:#0b0b12; color:white;"
-  >
+    <input id="captionTopic" placeholder="Enter your topic...">
 
-  <select
-    id="captionStyle"
-    style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #333; background:#0b0b12; color:white;"
-  >
-    <option value="Cinematic">🎬 Cinematic</option>
-    <option value="Funny">😂 Funny</option>
-    <option value="Emotional">❤️ Emotional</option>
-    <option value="Professional">💼 Professional</option>
-  </select>
+    <select id="captionStyle">
+      <option value="Cinematic">🎬 Cinematic</option>
+      <option value="Funny">😂 Funny</option>
+      <option value="Emotional">❤️ Emotional</option>
+      <option value="Professional">💼 Professional</option>
+    </select>
 
-  <button onclick="generateCaption()">
-    Generate Caption
-  </button>
+    <button onclick="generateCaption()">Generate Caption</button>
 
-  <div
-    id="captionResult"
-    style="margin-top:18px; color:#ddd; line-height:1.6;"
-  ></div>
+    <div id="captionResult" class="result"></div>
 
-  <button
-    id="copyCaption"
-    onclick="copyCaptionText()"
-    style="display:none; margin-top:12px;"
-  >
-    📋 Copy Caption
-  </button>
-    </div>
+    <button id="copyCaption" class="copy" onclick="copyText('captionResult','copyCaption')">
+      📋 Copy Caption
+    </button>
+  </div>
 
-    <div class="tool">
-  <h2>🎯 Hook Generator</h2>
-  <p>Create attention-grabbing hooks for your videos.</p>
 
-  <input
-    type="text"
-    id="hookTopic"
-    placeholder="Enter your topic..."
-    style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #333; background:#0b0b12; color:white;"
-  >
+  <!-- HOOK GENERATOR -->
+  <div class="tool">
+    <h2>🎯 Hook Generator</h2>
+    <p>Create attention-grabbing hooks for your videos.</p>
 
-  <button onclick="generateHook()">
-    Generate Hook
-  </button>
+    <input id="hookTopic" placeholder="Enter your topic...">
 
-  <div
-    id="hookResult"
-    style="margin-top:18px; color:#ddd; line-height:1.6;"
-  ></div>
-    </div>
+    <button onclick="generateHook()">Generate Hook</button>
 
-    <div class="tool">
-      <h2>▶️ YouTube Title Generator</h2>
-      <p>Generate catchy YouTube title ideas.</p>
-      <button onclick="alert('YouTube Title Generator coming soon!')">
-        Open Tool
-      </button>
-    </div>
+    <div id="hookResult" class="result"></div>
 
-    <div class="tool">
-      <h2>✨ Bio Generator</h2>
-      <p>Create a clean and memorable creator bio.</p>
-      <button onclick="alert('Bio Generator coming soon!')">
-        Open Tool
-      </button>
-    </div>
+    <button id="copyHook" class="copy" onclick="copyText('hookResult','copyHook')">
+      📋 Copy Hook
+    </button>
+  </div>
 
-    <div class="tool">
-      <h2>#️⃣ Hashtag Generator</h2>
-      <p>Find hashtag ideas for your content.</p>
-      <button onclick="alert('Hashtag Generator coming soon!')">
-        Open Tool
-      </button>
-    </div>
 
-  </section>
+  <!-- TITLE GENERATOR -->
+  <div class="tool">
+    <h2>▶️ YouTube Title Generator</h2>
+    <p>Generate catchy YouTube title ideas.</p>
 
-  <footer>
-    © 2026 ViralForge · Free Creator Tools
-  </footer>
-  <script>
-function generateHook() {
-  const topic = document.getElementById("hookTopic").value.trim();
-  const result = document.getElementById("hookResult");
+    <input id="titleTopic" placeholder="Enter your video topic...">
 
-  if (!topic) {
-    result.innerHTML = "⚠️ Enter a topic first.";
-    return;
-  }
+    <button onclick="generateTitle()">Generate Titles</button>
 
-  const hooks = [
-    `Nobody talks about this side of ${topic}...`,
-    `You won't believe what happened with ${topic} 👀`,
-    `This completely changes how you see ${topic}.`,
-    `Wait until you see what happens with ${topic}...`,
-    `Here's something about ${topic} that most people don't know.`,
-    `I didn't expect ${topic} to turn out like this.`,
-    `The truth about ${topic} nobody tells you.`,
-    `If you like ${topic}, you NEED to see this.`,
-    `This ${topic} moment deserves way more attention.`,
-    `Stop scrolling — you need to see this ${topic} edit.`
-  ];
+    <div id="titleResult" class="result"></div>
 
-  const randomHook =
-    hooks[Math.floor(Math.random() * hooks.length)];
+    <button id="copyTitle" class="copy" onclick="copyText('titleResult','copyTitle')">
+      📋 Copy Titles
+    </button>
+  </div>
 
-  result.innerHTML = `<strong>Your hook:</strong><br>${randomHook}`;
-}
-  </script>
-<script>
-function generateCaption() {
-  const topic = document.getElementById("captionTopic").value.trim();
-  const style = document.getElementById("captionStyle").value;
-  const result = document.getElementById("captionResult");
-  const copyButton = document.getElementById("copyCaption");
 
-  if (!topic) {
-    result.innerHTML = "⚠️ Enter a topic first.";
-    copyButton.style.display = "none";
-    return;
-  }
+  <!-- BIO GENERATOR -->
+  <div class="tool">
+    <h2>✨ Bio Generator</h2>
+    <p>Create a clean and memorable creator bio.</p>
 
-  const captions = {
-    Cinematic: [
-      `A moment worth remembering. 🎬 ${topic}`,
-      `Some moments don't need an explanation — ${topic}. ✨`,
-      `Just a little cinematic energy around ${topic}. 🎞️`
-    ],
+    <input id="bioTopic" placeholder="Example: Video Editor">
 
-    Funny: [
-      `POV: You thought ${topic} would go normally. 😂`,
-      `${topic} really said: "Let's make this interesting." 💀`,
-      `Nobody: Absolutely nobody: Me with ${topic}: 😂`
-    ],
+    <button onclick="generateBio()">Generate Bio</button>
 
-    Emotional: [
-      `Some moments stay with you forever. ❤️ ${topic}`,
-      `More than just a moment — it's a memory. ✨ ${topic}`,
-      `You had to be there to understand ${topic}. ❤️`
-    ],
+    <div id="bioResult" class="result"></div>
 
-    Professional: [
-      `Creating something meaningful around ${topic}. ✨`,
-      `Focused on the process. Inspired by ${topic}.`,
-      `Turning ideas into content — ${topic}. 🚀`
-    ]
-  };
+    <button id="copyBio" class="copy" onclick="copyText('bioResult','copyBio')">
+      📋 Copy Bio
+    </button>
+  </div>
 
-  const options = captions[style];
-  const caption = options[Math.floor(Math.random() * options.length)];
 
-  result.innerHTML = `<strong>Your caption:</strong><br>${caption}`;
-  copyButton.style.display = "inline-block";
-}
+  <!-- HASHTAG GENERATOR -->
+  <div class="tool">
+    <h2>#️⃣ Hashtag Generator</h2>
+    <p>Generate hashtag ideas for your content.</p>
 
-function copyCaptionText() {
-  const result = document.getElementById("captionResult");
+    <input id="hashtagTopic" placeholder="Enter your topic...">
 
-  navigator.clipboard.writeText(result.innerText.replace("Your caption:", "").trim());
+    <button onclick="generateHashtags()">Generate Hashtags</button>
 
-  document.getElementById("copyCaption").innerText = "✅ Copied!";
-  setTimeout(() => {
-    document.getElementById("copyCaption").innerText = "📋 Copy Caption";
-  }, 1500);
-}
-</script>
-  
-</body>
-</html>
+    <div id="hashtagResult" class="result"></div>
+
+    <button id="copyHashtags" class="copy" onclick="copyText('hashtagResult','copyHashtags')">
+      📋 Copy Hashtags
+    </button>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Viral
