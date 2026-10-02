@@ -1,149 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ViralForge — Free Creator Tools</title>
-  <meta name="description" content="Free creator tools for captions, hooks, titles, bios and hashtags.">
+<title>ViralForge — Free Creator Tools</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta name="description" content="Free creator tools for captions, hooks, YouTube titles, bios and hashtags.">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b0b12;
-      color: white;
-      min-height: 100vh;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    header {
-      padding: 22px;
-      text-align: center;
-      border-bottom: 1px solid #252535;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #0b0b12;
+  color: white;
+  min-height: 100vh;
+}
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-    }
+header {
+  text-align: center;
+  padding: 22px;
+  border-bottom: 1px solid #252535;
+}
 
-    .tagline {
-      color: #aaa;
-      margin-top: 8px;
-    }
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px 35px;
-    }
+.tagline {
+  color: #aaa;
+  margin-top: 8px;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+.hero {
+  text-align: center;
+  padding: 60px 20px 35px;
+}
 
-    .hero p {
-      color: #aaa;
-      font-size: 17px;
-    }
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
 
-    .tools {
-      max-width: 950px;
-      margin: 20px auto 60px;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
+.hero p {
+  color: #aaa;
+  font-size: 17px;
+}
 
-    .tool {
-      background: #151520;
-      border: 1px solid #29293a;
-      border-radius: 16px;
-      padding: 25px;
-    }
+.tools {
+  max-width: 950px;
+  margin: 20px auto 60px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
 
-    .tool h2 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
+.tool {
+  background: #151520;
+  border: 1px solid #29293a;
+  border-radius: 16px;
+  padding: 25px;
+}
 
-    .tool p {
-      color: #999;
-      text-align: center;
-      margin-bottom: 18px;
-    }
+.tool h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-    input,
-    select {
-      width: 100%;
-      padding: 13px;
-      margin: 7px 0;
-      border-radius: 10px;
-      border: 1px solid #333;
-      background: #0b0b12;
-      color: white;
-      outline: none;
-    }
+.tool p {
+  text-align: center;
+  color: #999;
+  margin-bottom: 18px;
+}
 
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 8px;
-      border: none;
-      border-radius: 10px;
-      background: white;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-    }
+input,
+select {
+  width: 100%;
+  padding: 13px;
+  margin: 7px 0;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #0b0b12;
+  color: white;
+}
 
-    button:hover {
-      opacity: 0.85;
-    }
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .result {
-      margin-top: 16px;
-    }
+button:active {
+  transform: scale(0.98);
+}
 
-    .result-card {
-      background: #0b0b12;
-      border: 1px solid #29293a;
-      border-radius: 12px;
-      padding: 14px;
-      margin-top: 10px;
-      line-height: 1.5;
-    }
+.result {
+  margin-top: 15px;
+}
 
-    .copy-btn {
-      margin-top: 10px;
-      width: auto;
-      padding: 9px 14px;
-      font-size: 13px;
-    }
+.result-card {
+  background: #0b0b12;
+  border: 1px solid #29293a;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      border-top: 1px solid #252535;
-      color: #777;
-    }
+.copy-btn {
+  width: auto;
+  padding: 8px 13px;
+  font-size: 13px;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #252535;
+  color: #777;
+}
 
-      .tools {
-        padding: 15px;
-      }
-    }
-  </style>
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .tools {
+    padding: 15px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -160,425 +159,259 @@
 
 <section class="tools">
 
-  <!-- CAPTION -->
-  <div class="tool">
-    <h2>📝 Caption Generator</h2>
-    <p>Create natural captions from your topic.</p>
+<!-- CAPTION GENERATOR -->
 
-    <input id="captionTopic" placeholder="Example: YouTube subscribers">
+<div class="tool">
+  <h2>📝 Caption Generator</h2>
+  <p>Create captions for your content.</p>
 
-    <select id="captionStyle">
-      <option value="Cinematic">🎬 Cinematic</option>
-      <option value="Funny">😂 Funny</option>
-      <option value="Emotional">❤️ Emotional</option>
-      <option value="Professional">💼 Professional</option>
-    </select>
+  <input
+    id="captionTopic"
+    type="text"
+    placeholder="Example: Marvel edit"
+  >
 
-    <button onclick="generateCaption()">Generate Caption</button>
+  <select id="captionStyle">
+    <option value="Cinematic">🎬 Cinematic</option>
+    <option value="Funny">😂 Funny</option>
+    <option value="Emotional">❤️ Emotional</option>
+    <option value="Professional">💼 Professional</option>
+  </select>
 
-    <div id="captionResult" class="result"></div>
-  </div>
+  <button id="captionButton">Generate Caption</button>
 
-
-  <!-- HOOK -->
-  <div class="tool">
-    <h2>🎯 Hook Generator</h2>
-    <p>Create attention-grabbing hooks.</p>
-
-    <input id="hookTopic" placeholder="Example: YouTube subscribers">
-
-    <button onclick="generateHook()">Generate Hooks</button>
-
-    <div id="hookResult" class="result"></div>
-  </div>
+  <div id="captionResult" class="result"></div>
+</div>
 
 
-  <!-- TITLES -->
-  <div class="tool">
-    <h2>▶️ YouTube Title Generator</h2>
-    <p>Generate individual title ideas.</p>
+<!-- HOOK GENERATOR -->
 
-    <input id="titleTopic" placeholder="Example: YouTube subscribers">
+<div class="tool">
+  <h2>🎯 Hook Generator</h2>
+  <p>Create attention-grabbing hooks.</p>
 
-    <button onclick="generateTitle()">Generate Titles</button>
+  <input
+    id="hookTopic"
+    type="text"
+    placeholder="Example: AI video editing"
+  >
 
-    <div id="titleResult" class="result"></div>
-  </div>
+  <button id="hookButton">Generate Hooks</button>
 
-
-  <!-- BIO -->
-  <div class="tool">
-    <h2>✨ Bio Generator</h2>
-    <p>Create a clean creator bio.</p>
-
-    <input id="bioTopic" placeholder="Example: Video Editor">
-
-    <button onclick="generateBio()">Generate Bio</button>
-
-    <div id="bioResult" class="result"></div>
-  </div>
+  <div id="hookResult" class="result"></div>
+</div>
 
 
-  <!-- HASHTAGS -->
-  <div class="tool">
-    <h2>#️⃣ Hashtag Generator</h2>
-    <p>Generate relevant hashtag ideas.</p>
+<!-- TITLE GENERATOR -->
 
-    <input id="hashtagTopic" placeholder="Example: YouTube growth">
+<div class="tool">
+  <h2>▶️ YouTube Title Generator</h2>
+  <p>Create clickable YouTube title ideas.</p>
 
-    <button onclick="generateHashtags()">Generate Hashtags</button>
+  <input
+    id="titleTopic"
+    type="text"
+    placeholder="Example: Roblox challenge"
+  >
 
-    <div id="hashtagResult" class="result"></div>
-  </div>
+  <button id="titleButton">Generate Titles</button>
+
+  <div id="titleResult" class="result"></div>
+</div>
+
+
+<!-- BIO GENERATOR -->
+
+<div class="tool">
+  <h2>✨ Bio Generator</h2>
+  <p>Create a clean creator bio.</p>
+
+  <input
+    id="bioTopic"
+    type="text"
+    placeholder="Example: Video editor"
+  >
+
+  <button id="bioButton">Generate Bios</button>
+
+  <div id="bioResult" class="result"></div>
+</div>
+
+
+<!-- HASHTAG GENERATOR -->
+
+<div class="tool">
+  <h2>#️⃣ Hashtag Generator</h2>
+  <p>Generate relevant hashtags.</p>
+
+  <input
+    id="hashtagTopic"
+    type="text"
+    placeholder="Example: Football edits"
+  >
+
+  <button id="hashtagButton">Generate Hashtags</button>
+
+  <div id="hashtagResult" class="result"></div>
+</div>
 
 </section>
 
 <footer>
-  © 2026 ViralForge · Free Creator Tools
+© 2026 ViralForge · Free Creator Tools
 </footer>
 
 
 <script>
 
-function getTopicContext(topic) {
+function copyText(text, button) {
 
-  const t = topic.toLowerCase();
+  navigator.clipboard.writeText(text).then(function() {
+
+    var oldText = button.innerText;
+
+    button.innerText = "✅ Copied!";
+
+    setTimeout(function() {
+      button.innerText = oldText;
+    }, 1200);
+
+  });
+
+}
+
+
+/* CAPTION */
+
+document.getElementById("captionButton").addEventListener("click", function() {
+
+  var topic = document.getElementById("captionTopic").value.trim();
+  var style = document.getElementById("captionStyle").value;
+  var result = document.getElementById("captionResult");
+
+  if (topic === "") {
+    result.innerHTML = '<div class="result-card">⚠️ Enter a topic first.</div>';
+    return;
+  }
+
+  var t = topic.toLowerCase();
+  var captions = [];
 
   if (
     t.includes("youtube") ||
-    t.includes("yt") ||
     t.includes("subscriber") ||
-    t.includes("subscribers") ||
     t.includes("channel")
   ) {
-    return {
-      subject: "YouTube growth",
-      phrase: "growing your YouTube channel",
-      audience: "YouTube creators"
-    };
-  }
 
-  if (
-    t.includes("instagram") ||
-    t.includes("followers") ||
-    t.includes("reels")
-  ) {
-    return {
-      subject: "Instagram growth",
-      phrase: "growing on Instagram",
-      audience: "creators"
-    };
-  }
+    captions = [
+      "Trying to grow on YouTube? Every upload is another step. 🚀",
+      "Building a channel takes time, consistency and patience. 🎬",
+      "Small channel today. Bigger goals tomorrow. ✨"
+    ];
 
-  if (
-    t.includes("editing") ||
-    t.includes("video editor") ||
-    t.includes("video editing")
-  ) {
-    return {
-      subject: "video editing",
-      phrase: "creating better edits",
-      audience: "video editors"
-    };
-  }
-
-  if (
+  } else if (
     t.includes("marvel") ||
     t.includes("avengers") ||
     t.includes("spiderman") ||
     t.includes("spider-man")
   ) {
-    return {
-      subject: "Marvel edits",
-      phrase: "making Marvel edits",
-      audience: "Marvel fans"
-    };
-  }
-
-  return {
-    subject: topic,
-    phrase: topic,
-    audience: "creators"
-  };
-}
-
-
-/* CAPTION GENERATOR */
-
-function generateCaption() {
-
-  const topic = document.getElementById("captionTopic").value.trim();
-  const style = document.getElementById("captionStyle").value;
-  const result = document.getElementById("captionResult");
-
-  if (!topic) {
-    result.innerHTML = `<div class="result-card">⚠️ Enter a topic first.</div>`;
-    return;
-  }
-
-  const c = getTopicContext(topic);
-
-  let captions = [];
-
-  if (style === "Cinematic") {
 
     captions = [
-      `Some moments change everything. 🎬 This one is about ${c.phrase}.`,
-      `Not just content. A moment worth remembering. ✨`,
-      `Every creator has a story. This is another chapter in ${c.subject}.`
-    ];
-
-  } else if (style === "Funny") {
-
-    captions = [
-      `POV: You said you were done with ${c.subject}... and started again 5 minutes later. 😂`,
-      `Me pretending I know exactly what I'm doing with ${c.subject}. 💀`,
-      `${c.subject} really knows how to consume all my free time. 😂`
-    ];
-
-  } else if (style === "Emotional") {
-
-    captions = [
-      `Started with an idea. Stayed for the journey. ❤️`,
-      `Some goals take time, but every step counts. ✨`,
-      `One day you'll look back and realize how far you've come. ❤️`
+      "Some characters don't need an introduction. 🦸",
+      "The kind of moment that deserves a replay. 🎬",
+      "Marvel never misses when the moment hits right. ✨"
     ];
 
   } else {
 
-    captions = [
-      `Focused on creating better content and improving every day. 🚀`,
-      `Turning ideas into content, one project at a time.`,
-      `Consistency, creativity and better content. That's the goal. ✨`
-    ];
+    if (style === "Funny") {
+      captions = [
+        "I definitely didn't spend way too much time making this. 😂",
+        "Well... that turned out better than expected. 💀",
+        "POV: You said this would be quick. 😂"
+      ];
+    }
+
+    if (style === "Cinematic") {
+      captions = [
+        "A moment worth remembering. 🎬",
+        "Some moments simply hit different. ✨",
+        "Turn the volume up and enjoy the moment. 🎞️"
+      ];
+    }
+
+    if (style === "Emotional") {
+      captions = [
+        "Some moments stay with you forever. ❤️",
+        "More than content. A memory. ✨",
+        "One moment. So many feelings. ❤️"
+      ];
+    }
+
+    if (style === "Professional") {
+      captions = [
+        "Creating better content, one project at a time. 🚀",
+        "Focused on creativity, consistency and growth.",
+        "Turning ideas into content that connects."
+      ];
+    }
   }
 
-  let html = "";
+  var html = "";
 
-  captions.forEach((caption, index) => {
-    html += `
-      <div class="result-card">
-        ${caption}
-        <br>
-        <button class="copy-btn" onclick="copyValue(this, \`${caption.replace(/`/g, "\\`")}\`)">
-          📋 Copy
-        </button>
-      </div>
-    `;
-  });
+  captions.forEach(function(caption) {
 
-  result.innerHTML = html;
-}
-
-
-/* HOOK GENERATOR */
-
-function generateHook() {
-
-  const topic = document.getElementById("hookTopic").value.trim();
-  const result = document.getElementById("hookResult");
-
-  if (!topic) {
-    result.innerHTML = `<div class="result-card">⚠️ Enter a topic first.</div>`;
-    return;
-  }
-
-  const c = getTopicContext(topic);
-
-  const hooks = [
-
-    `If you're serious about ${c.phrase}, stop doing this...`,
-    `Nobody tells creators this about ${c.subject}.`,
-    `Want to know what's actually stopping your growth?`,
-    `You're probably doing ${c.subject} wrong — here's why.`,
-    `Before you post another video, watch this.`,
-    `This one mistake could be holding your content back.`,
-    `If I had to start ${c.phrase} again, I'd do this first.`,
-    `Here's what I wish I knew before starting ${c.subject}.`
-
-  ];
-
-  let html = "";
-
-  hooks.forEach(hook => {
-
-    html += `
-      <div class="result-card">
-        ${hook}
-        <br>
-        <button class="copy-btn" onclick="copyValue(this, \`${hook}\`)">
-          📋 Copy
-        </button>
-      </div>
-    `;
+    html +=
+      '<div class="result-card">' +
+      caption +
+      '<br>' +
+      '<button class="copy-btn">📋 Copy</button>' +
+      '</div>';
 
   });
 
   result.innerHTML = html;
-}
 
+  var buttons = result.querySelectorAll(".copy-btn");
 
-/* TITLE GENERATOR */
+  buttons.forEach(function(button, index) {
 
-function generateTitle() {
-
-  const topic = document.getElementById("titleTopic").value.trim();
-  const result = document.getElementById("titleResult");
-
-  if (!topic) {
-    result.innerHTML = `<div class="result-card">⚠️ Enter a topic first.</div>`;
-    return;
-  }
-
-  const c = getTopicContext(topic);
-
-  const titles = [
-
-    `How to Grow Your YouTube Channel Faster`,
-    `7 Mistakes Killing Your YouTube Growth`,
-    `What Nobody Tells You About YouTube Growth`,
-    `I Tried This YouTube Growth Strategy`,
-    `How I Would Start a YouTube Channel Today`,
-    `The Truth About Getting More Subscribers`,
-    `Stop Doing This If You Want More Subscribers`
-
-  ];
-
-  if (c.subject !== "YouTube growth") {
-
-    titles[0] = `The Ultimate Guide to ${c.subject}`;
-    titles[1] = `7 Mistakes People Make With ${c.subject}`;
-    titles[2] = `What Nobody Tells You About ${c.subject}`;
-    titles[3] = `I Tried ${c.subject} — Here's What Happened`;
-    titles[4] = `How to Get Better at ${c.subject}`;
-    titles[5] = `The Truth About ${c.subject}`;
-    titles[6] = `Stop Doing This With ${c.subject}`;
-
-  }
-
-  let html = "";
-
-  titles.forEach(title => {
-
-    html += `
-      <div class="result-card">
-        ${title}
-        <br>
-        <button class="copy-btn" onclick="copyValue(this, \`${title}\`)">
-          📋 Copy
-        </button>
-      </div>
-    `;
+    button.addEventListener("click", function() {
+      copyText(captions[index], button);
+    });
 
   });
 
-  result.innerHTML = html;
-}
+});
 
 
-/* BIO GENERATOR */
+/* HOOKS */
 
-function generateBio() {
+document.getElementById("hookButton").addEventListener("click", function() {
 
-  const topic = document.getElementById("bioTopic").value.trim();
-  const result = document.getElementById("bioResult");
+  var topic = document.getElementById("hookTopic").value.trim();
+  var result = document.getElementById("hookResult");
 
-  if (!topic) {
-    result.innerHTML = `<div class="result-card">⚠️ Enter what you create.</div>`;
+  if (topic === "") {
+    result.innerHTML = '<div class="result-card">⚠️ Enter a topic first.</div>';
     return;
   }
 
-  const c = getTopicContext(topic);
-
-  const bios = [
-
-    `🎬 ${c.subject}
-✨ Creating content that stands out
-🚀 Improving every day`,
-
-    `🎥 ${c.subject}
-⚡ Turning ideas into content
-📩 Open to creative projects`,
-
-    `✨ ${c.subject}
-🎬 Create • Edit • Improve
-🚀 Building something bigger`
-
-  ];
-
-  let html = "";
-
-  bios.forEach(bio => {
-
-    html += `
-      <div class="result-card">
-        ${bio.replace(/\n/g, "<br>")}
-        <br>
-        <button class="copy-btn" onclick="copyValue(this, \`${bio}\`)">
-          📋 Copy
-        </button>
-      </div>
-    `;
-
-  });
-
-  result.innerHTML = html;
-}
-
-
-/* HASHTAG GENERATOR */
-
-function generateHashtags() {
-
-  const topic = document.getElementById("hashtagTopic").value.trim();
-  const result = document.getElementById("hashtagResult");
-
-  if (!topic) {
-    result.innerHTML = `<div class="result-card">⚠️ Enter a topic first.</div>`;
-    return;
-  }
-
-  const t = topic.toLowerCase();
-
-  let hashtags = [];
+  var t = topic.toLowerCase();
+  var hooks = [];
 
   if (
     t.includes("youtube") ||
     t.includes("subscriber") ||
-    t.includes("channel") ||
-    t.includes("yt")
+    t.includes("channel")
   ) {
 
-    hashtags = [
-      "#youtube",
-      "#youtubegrowth",
-      "#youtubecreator",
-      "#youtubetips",
-      "#subscribers",
-      "#contentcreator",
-      "#creator",
-      "#contentcreation",
-      "#shorts",
-      "#viral"
-    ];
-
-  } else if (
-    t.includes("instagram") ||
-    t.includes("followers") ||
-    t.includes("reels")
-  ) {
-
-    hashtags = [
-      "#instagram",
-      "#instagramgrowth",
-      "#reels",
-      "#reelscreator",
-      "#contentcreator",
-      "#creator",
-      "#viralreels",
-      "#explore",
-      "#trending",
-      "#socialmedia"
+    hooks = [
+      "Want more YouTube subscribers? Start with this.",
+      "Your YouTube videos may be missing this one thing.",
+      "Trying to grow your channel? Watch this first.",
+      "This could be why your subscribers aren't growing.",
+      "Before uploading your next YouTube video, hear this."
     ];
 
   } else if (
@@ -586,42 +419,222 @@ function generateHashtags() {
     t.includes("editor")
   ) {
 
-    hashtags = [
-      "#videoediting",
-      "#videoeditor",
-      "#editor",
-      "#editing",
-      "#editingtips",
-      "#aftereffects",
-      "#premierepro",
-      "#creative",
-      "#contentcreator",
-      "#reels"
+    hooks = [
+      "Your edits might be missing this.",
+      "Stop editing your videos like this.",
+      "This editing trick changes everything.",
+      "Most editors overlook this simple detail.",
+      "Want better edits? Start here."
     ];
 
   } else {
 
-    hashtags = [
-      `#${topic.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()}`,
-      "#contentcreator",
-      "#creator",
-      "#contentcreation",
-      "#creative",
-      "#reels",
-      "#shorts",
-      "#viral",
-      "#trending",
-      "#explore"
+    hooks = [
+      "Nobody talks about this side of " + topic + "...",
+      "You're probably doing " + topic + " wrong.",
+      "Here's what nobody tells you about " + topic + ".",
+      "Before you try " + topic + ", watch this.",
+      "This completely changes how you see " + topic + "."
     ];
 
   }
 
-  const text = hashtags.join(" ");
+  var html = "";
 
-  result.innerHTML = `
-    <div class="result-card">
-      ${text}
-      <br>
-      <button class="copy-btn" onclick="copyValue(this, \`${text}\`)">
-        📋 Copy Hashtags
-</button>
+  hooks.forEach(function(hook) {
+
+    html +=
+      '<div class="result-card">' +
+      hook +
+      '<br>' +
+      '<button class="copy-btn">📋 Copy</button>' +
+      '</div>';
+
+  });
+
+  result.innerHTML = html;
+
+  var buttons = result.querySelectorAll(".copy-btn");
+
+  buttons.forEach(function(button, index) {
+
+    button.addEventListener("click", function() {
+      copyText(hooks[index], button);
+    });
+
+  });
+
+});
+
+
+/* TITLES */
+
+document.getElementById("titleButton").addEventListener("click", function() {
+
+  var topic = document.getElementById("titleTopic").value.trim();
+  var result = document.getElementById("titleResult");
+
+  if (topic === "") {
+    result.innerHTML = '<div class="result-card">⚠️ Enter a topic first.</div>';
+    return;
+  }
+
+  var t = topic.toLowerCase();
+  var titles = [];
+
+  if (
+    t.includes("youtube") ||
+    t.includes("subscriber") ||
+    t.includes("channel")
+  ) {
+
+    titles = [
+      "How to Get More YouTube Subscribers",
+      "7 Mistakes Killing Your YouTube Growth",
+      "What Nobody Tells You About Growing on YouTube",
+      "Why Your YouTube Videos Aren't Getting Subscribers",
+      "How I Would Grow a YouTube Channel From Zero"
+    ];
+
+  } else {
+
+    titles = [
+      "The Truth About " + topic,
+      "7 Things You Need to Know About " + topic,
+      "I Tried " + topic + " — Here's What Happened",
+      "What Nobody Tells You About " + topic,
+      "The Ultimate Guide to " + topic
+    ];
+
+  }
+
+  var html = "";
+
+  titles.forEach(function(title) {
+
+    html +=
+      '<div class="result-card">' +
+      '<strong>' + title + '</strong>' +
+      '<br>' +
+      '<button class="copy-btn">📋 Copy Title</button>' +
+      '</div>';
+
+  });
+
+  result.innerHTML = html;
+
+  var buttons = result.querySelectorAll(".copy-btn");
+
+  buttons.forEach(function(button, index) {
+
+    button.addEventListener("click", function() {
+      copyText(titles[index], button);
+    });
+
+  });
+
+});
+
+
+/* BIOS */
+
+document.getElementById("bioButton").addEventListener("click", function() {
+
+  var topic = document.getElementById("bioTopic").value.trim();
+  var result = document.getElementById("bioResult");
+
+  if (topic === "") {
+    result.innerHTML = '<div class="result-card">⚠️ Enter what you create.</div>';
+    return;
+  }
+
+  var t = topic.toLowerCase();
+  var bios = [];
+
+  if (
+    t.includes("editor") ||
+    t.includes("editing")
+  ) {
+
+    bios = [
+      "🎬 Video Editor\n✨ Turning ideas into visual stories\n📩 Open for projects",
+      "🎥 Video Editor\n⚡ Edits that make content stand out\n📩 Let's work together",
+      "🎬 Editor | Creator\n🚀 Creating. Editing. Improving.\n📩 DM for projects"
+    ];
+
+  } else if (
+    t.includes("gaming") ||
+    t.includes("gamer")
+  ) {
+
+    bios = [
+      "🎮 Gaming Creator\n🔥 Games • Clips • Chaos\n🚀 New content regularly",
+      "🎮 Gamer & Creator\n⚡ Playing. Recording. Creating.\n🎯 Follow the journey",
+      "🎮 Gaming content\n🔥 Clips worth watching\n🚀 Let's level up"
+    ];
+
+  } else {
+
+    bios = [
+      "✨ " + topic + "\n🎬 Creating content that stands out\n🚀 Building every day",
+      "🎥 " + topic + "\n⚡ Turning ideas into content\n📩 Open to creative projects",
+      "🚀 " + topic + "\n✨ Create • Improve • Repeat\n🎬 Follow the journey"
+    ];
+
+  }
+
+  var html = "";
+
+  bios.forEach(function(bio) {
+
+    html +=
+      '<div class="result-card">' +
+      bio.replace(/\n/g, "<br>") +
+      '<br>' +
+      '<button class="copy-btn">📋 Copy Bio</button>' +
+      '</div>';
+
+  });
+
+  result.innerHTML = html;
+
+  var buttons = result.querySelectorAll(".copy-btn");
+
+  buttons.forEach(function(button, index) {
+
+    button.addEventListener("click", function() {
+      copyText(bios[index], button);
+    });
+
+  });
+
+});
+
+
+/* HASHTAGS */
+
+document.getElementById("hashtagButton").addEventListener("click", function() {
+
+  var topic = document.getElementById("hashtagTopic").value.trim();
+  var result = document.getElementById("hashtagResult");
+
+  if (topic === "") {
+    result.innerHTML = '<div class="result-card">⚠️ Enter a topic first.</div>';
+    return;
+  }
+
+  var t = topic.toLowerCase();
+  var hashtags = [];
+
+  if (
+    t.includes("football") ||
+    t.includes("soccer")
+  ) {
+
+    hashtags = [
+      "#football",
+      "#soccer",
+      "#footballreels",
+      "#footballfans",
+      "#footballvideo",
+      "#
