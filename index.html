@@ -234,6 +234,63 @@ function generateHook() {
   result.innerHTML = `<strong>Your hook:</strong><br>${randomHook}`;
 }
   </script>
+<script>
+function generateCaption() {
+  const topic = document.getElementById("captionTopic").value.trim();
+  const style = document.getElementById("captionStyle").value;
+  const result = document.getElementById("captionResult");
+  const copyButton = document.getElementById("copyCaption");
 
+  if (!topic) {
+    result.innerHTML = "⚠️ Enter a topic first.";
+    copyButton.style.display = "none";
+    return;
+  }
+
+  const captions = {
+    Cinematic: [
+      `A moment worth remembering. 🎬 ${topic}`,
+      `Some moments don't need an explanation — ${topic}. ✨`,
+      `Just a little cinematic energy around ${topic}. 🎞️`
+    ],
+
+    Funny: [
+      `POV: You thought ${topic} would go normally. 😂`,
+      `${topic} really said: "Let's make this interesting." 💀`,
+      `Nobody: Absolutely nobody: Me with ${topic}: 😂`
+    ],
+
+    Emotional: [
+      `Some moments stay with you forever. ❤️ ${topic}`,
+      `More than just a moment — it's a memory. ✨ ${topic}`,
+      `You had to be there to understand ${topic}. ❤️`
+    ],
+
+    Professional: [
+      `Creating something meaningful around ${topic}. ✨`,
+      `Focused on the process. Inspired by ${topic}.`,
+      `Turning ideas into content — ${topic}. 🚀`
+    ]
+  };
+
+  const options = captions[style];
+  const caption = options[Math.floor(Math.random() * options.length)];
+
+  result.innerHTML = `<strong>Your caption:</strong><br>${caption}`;
+  copyButton.style.display = "inline-block";
+}
+
+function copyCaptionText() {
+  const result = document.getElementById("captionResult");
+
+  navigator.clipboard.writeText(result.innerText.replace("Your caption:", "").trim());
+
+  document.getElementById("copyCaption").innerText = "✅ Copied!";
+  setTimeout(() => {
+    document.getElementById("copyCaption").innerText = "📋 Copy Caption";
+  }, 1500);
+}
+</script>
+  
 </body>
 </html>
