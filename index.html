@@ -1,2078 +1,1435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-  <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
-  <meta name="google-site-verification" content="aZGo1HKw6A1BoFSRHJ3CdDvUcqB6gACH40uClmAkZEw" />
+<meta name="google-site-verification" content="aZGo1HKw6A1BoFSRHJ3CdDvUcqB6gACH40uClmAkZEw" />
 
-  <title>ViralForge — Free Creator Tools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-    content="ViralForge — Free tools for creators to generate captions, hooks, YouTube titles, bios and relevant hashtags.">
+<meta name="description" content="ViralForge - Free creator tools for captions, hooks, YouTube titles, bios and hashtags.">
+<meta name="keywords" content="caption generator, hook generator, YouTube title generator, bio generator, hashtag generator, creator tools">
+<meta name="author" content="Fazil">
 
-  <meta name="keywords"
-    content="caption generator, hook generator, YouTube title generator, bio generator, hashtag generator, creator tools">
+<link rel="canonical" href="https://fsw12467.github.io/ViralForge/">
 
-  <meta name="author" content="ViralForge">
-  <meta name="robots" content="index, follow">
+<meta property="og:title" content="ViralForge - Free Creator Tools">
+<meta property="og:description" content="Create better captions, hooks, titles, bios and hashtags.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fsw12467.github.io/ViralForge/">
 
-  <link rel="canonical"
-    href="https://fsw12467.github.io/ViralForge/">
+<title>🔥 ViralForge - Free Creator Tools</title>
 
-  <meta property="og:title"
-    content="ViralForge — Free Creator Tools">
+<style>
 
-  <meta property="og:description"
-    content="Create. Improve. Go Viral.">
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-  <meta property="og:type" content="website">
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0b0b12;
+    color:#fff;
+    line-height:1.6;
+}
 
-  <meta property="og:url"
-    content="https://fsw12467.github.io/ViralForge/">
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:auto;
+}
 
-  <style>
+header{
+    padding:25px 0;
+    border-bottom:1px solid #22222d;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+.logo{
+    font-size:28px;
+    font-weight:800;
+}
+
+.tagline{
+    color:#9999a8;
+    font-size:14px;
+    margin-top:3px;
+}
+
+.hero{
+    text-align:center;
+    padding:65px 15px 45px;
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,70px);
+    line-height:1.05;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#7c5cff;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#aaaab8;
+    font-size:17px;
+}
+
+/* DISCORD BUTTON */
+
+.discord-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:25px;
+    padding:13px 22px;
+    background:#5865F2;
+    color:#fff;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:700;
+    box-shadow:0 8px 25px rgba(88,101,242,.18);
+    transition:transform .2s, background .2s, box-shadow .2s;
+}
+
+.discord-btn:hover{
+    background:#4752c4;
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(88,101,242,.28);
+}
+
+.discord-icon{
+    width:22px;
+    height:22px;
+    display:block;
+    fill:currentColor;
+}
+
+.badges{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:25px;
+}
+
+.badge{
+    padding:7px 13px;
+    border:1px solid #292936;
+    border-radius:20px;
+    color:#b9b9c7;
+    font-size:13px;
+}
+
+.tools{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    padding:20px 0 60px;
+}
+
+.card{
+    background:#11111a;
+    border:1px solid #252532;
+    border-radius:18px;
+    padding:24px;
+    transition:.2s;
+}
+
+.card:hover{
+    border-color:#5140a8;
+    transform:translateY(-2px);
+}
+
+.card h2{
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#888896;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+textarea,
+input,
+select{
+    width:100%;
+    background:#09090f;
+    border:1px solid #2b2b38;
+    color:white;
+    padding:13px;
+    border-radius:10px;
+    outline:none;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+textarea:focus,
+input:focus,
+select:focus{
+    border-color:#6954dc;
+}
+
+button{
+    width:100%;
+    border:none;
+    border-radius:10px;
+    padding:13px;
+    background:#6d55e8;
+    color:white;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    background:#8069f3;
+}
+
+.results{
+    margin-top:15px;
+}
+
+.result{
+    background:#0b0b12;
+    border:1px solid #292936;
+    border-radius:11px;
+    padding:13px;
+    margin-top:10px;
+    position:relative;
+    padding-right:75px;
+    white-space:pre-wrap;
+    word-break:break-word;
+}
+
+.copy-btn{
+    position:absolute;
+    right:8px;
+    top:8px;
+    width:auto;
+    padding:7px 10px;
+    font-size:12px;
+    background:#25253a;
+}
+
+.copy-btn:hover{
+    background:#383852;
+}
+
+footer{
+    text-align:center;
+    border-top:1px solid #22222d;
+    padding:30px 15px;
+    color:#777785;
+    font-size:13px;
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding-top:45px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .card{
+        padding:19px;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b12;
-      color: #ffffff;
-      min-height: 100vh;
+    .discord-btn{
+        width:100%;
+        max-width:280px;
     }
 
-    header {
-      padding: 22px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #242432;
-      background: rgba(11,11,18,0.95);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-    }
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .tagline {
-      color: #9999aa;
-      font-size: 13px;
-      margin-top: 4px;
-    }
-
-    .header-badge {
-      border: 1px solid #303044;
-      padding: 8px 13px;
-      border-radius: 20px;
-      color: #bdbdd0;
-      font-size: 12px;
-      background: #11111a;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 75px 20px 50px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 8vw, 76px);
-      line-height: 1;
-      letter-spacing: -3px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(90deg, #ffffff, #a9a9bd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      color: #aaaabb;
-      font-size: 17px;
-      max-width: 650px;
-      margin: auto;
-      line-height: 1.7;
-    }
-
-    .tools {
-      width: 90%;
-      max-width: 1100px;
-      margin: 20px auto 80px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .tool {
-      background: #11111a;
-      border: 1px solid #272737;
-      border-radius: 18px;
-      padding: 25px;
-      transition: 0.25s ease;
-    }
-
-    .tool:hover {
-      transform: translateY(-4px);
-      border-color: #46465d;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    }
-
-    .tool h2 {
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .tool-description {
-      color: #89899c;
-      font-size: 13px;
-      margin-bottom: 18px;
-      line-height: 1.5;
-    }
-
-    textarea,
-    input,
-    select {
-      width: 100%;
-      background: #0a0a10;
-      color: #ffffff;
-      border: 1px solid #2c2c3b;
-      border-radius: 11px;
-      padding: 13px;
-      outline: none;
-      font-size: 14px;
-      margin-bottom: 11px;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    textarea:focus,
-    input:focus,
-    select:focus {
-      border-color: #66667e;
-    }
-
-    select {
-      cursor: pointer;
-    }
-
-    button {
-      width: 100%;
-      border: none;
-      border-radius: 11px;
-      padding: 13px 16px;
-      background: #ffffff;
-      color: #09090e;
-      font-weight: 800;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      transform: translateY(-1px);
-      opacity: 0.9;
-    }
-
-    button:active {
-      transform: scale(0.98);
-    }
-
-    .results {
-      margin-top: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .result {
-      background: #0b0b12;
-      border: 1px solid #292938;
-      border-radius: 12px;
-      padding: 14px;
-      line-height: 1.55;
-      font-size: 14px;
-    }
-
-    .result-number {
-      color: #77778b;
-      font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-    }
-
-    .copy-btn {
-      margin-top: 10px;
-      padding: 8px 10px;
-      background: #191923;
-      color: #ffffff;
-      border: 1px solid #303040;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .copy-btn:hover {
-      background: #22222e;
-    }
-
-    .features {
-      width: 90%;
-      max-width: 1100px;
-      margin: -20px auto 70px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .feature {
-      border: 1px solid #242432;
-      background: #0f0f17;
-      padding: 17px;
-      border-radius: 13px;
-      text-align: center;
-      color: #aaaabb;
-      font-size: 13px;
-    }
-
-    footer {
-      border-top: 1px solid #242432;
-      text-align: center;
-      padding: 30px 20px;
-      color: #6f6f80;
-      font-size: 12px;
-    }
-
-    @media (max-width: 600px) {
-
-      header {
-        padding: 18px 5%;
-      }
-
-      .header-badge {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 55px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .tools {
-        width: 92%;
-      }
-
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
 <header>
+<div class="container">
 
-  <div>
     <div class="logo">🔥 ViralForge</div>
-    <div class="tagline">Free tools built for creators.</div>
-  </div>
 
-  <div class="header-badge">
-    ⚡ No API Required
-  </div>
+    <div class="tagline">
+        Free tools built for creators.
+    </div>
 
+</div>
 </header>
 
+<main class="container">
 
 <section class="hero">
 
-  <h1>
-    Create. Improve. <span>Go Viral.</span>
-  </h1>
+    <h1>
+        Create. Improve. <span>Go Viral.</span>
+    </h1>
 
-  <p>
-    Free tools for captions, hooks, YouTube titles,
-    bios and relevant hashtags — powered entirely by your browser.
-  </p>
+    <p>
+        Free tools for captions, hooks, YouTube titles, bios and hashtags.
+        No account. No API. Just create.
+    </p>
+
+    <!-- DISCORD -->
+
+    <a
+        href="https://discord.gg/Gdr8rKyBwS"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="discord-btn">
+
+        <!-- Discord SVG Icon -->
+        <svg
+            class="discord-icon"
+            viewBox="0 0 640 512"
+            aria-hidden="true">
+
+            <path d="M524.5 69.8a1.5 1.5 0 0 0-.8-.7A485.8 485.8 0 0 0 404.1 32a1.8 1.8 0 0 0-1.9.9 337.5 337.5 0 0 0-14.9 30.6 447.8 447.8 0 0 0-134.5 0 309.5 309.5 0 0 0-15.1-30.6 1.9 1.9 0 0 0-1.9-.9 483.7 483.7 0 0 0-119.6 37.1 1.7 1.7 0 0 0-.8.7C39.3 176.2 18.2 281.3 29.7 385.6a2.3 2.3 0 0 0 .9 1.6 487.7 487.7 0 0 0 146.5 74.1 1.9 1.9 0 0 0 2.1-.7 348.2 348.2 0 0 0 30-48.8 1.9 1.9 0 0 0-1-2.6 321.2 321.2 0 0 1-45.9-21.9 1.9 1.9 0 0 1-.2-3.2c3.1-2.3 6.2-4.7 9.1-7.1a1.9 1.9 0 0 1 2-.3c96.2 43.9 200.4 43.9 295.5 0a1.9 1.9 0 0 1 2 .3c2.9 2.4 6 4.8 9.1 7.1a1.9 1.9 0 0 1-.1 3.2 301.4 301.4 0 0 1-46 21.9 1.9 1.9 0 0 0-1 2.7 391.1 391.1 0 0 0 30 48.8 1.9 1.9 0 0 0 2.1.7 486 486 0 0 0 146.5-74.1 1.9 1.9 0 0 0 .9-1.6c13.5-120.9-20.7-224.8-86.9-315.8zM212.7 337.6c-28.9 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.6 0 53.3 26.8 52.8 59.2 0 32.6-23.2 59.2-52.8 59.2zm214.6 0c-28.9 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.6 0 53.3 26.8 52.8 59.2 0 32.6-23.2 59.2-52.8 59.2z"/>
+
+        </svg>
+
+        Join FSW Development
+
+    </a>
+
+    <div class="badges">
+
+        <div class="badge">⚡ Fast</div>
+        <div class="badge">🆓 Free</div>
+        <div class="badge">🔒 No Login</div>
+        <div class="badge">📱 Mobile Friendly</div>
+
+    </div>
 
 </section>
 
-
-<div class="features">
-
-  <div class="feature">⚡ Instant Results</div>
-  <div class="feature">🧠 Context Detection</div>
-  <div class="feature">🎯 Topic Matching</div>
-  <div class="feature">🔒 No API Key</div>
-  <div class="feature">💸 Completely Free</div>
-
-</div>
-
-
 <section class="tools">
 
+<div class="card">
 
-  <!-- CAPTION GENERATOR -->
+    <h2>📝 Caption Generator</h2>
 
-  <div class="tool">
-
-    <h2>✍️ Caption Generator</h2>
-
-    <p class="tool-description">
-      Turn your idea into captions that actually match your content.
+    <p>
+        Create captions based on what your post is actually about.
     </p>
 
     <textarea
-      id="captionInput"
-      placeholder="Example: My bike fell down while I was riding...">
+        id="captionInput"
+        placeholder="Example: My bike fell down today">
     </textarea>
 
     <select id="captionStyle">
 
-      <option value="cinematic">
-        Cinematic
-      </option>
-
-      <option value="funny">
-        Funny
-      </option>
-
-      <option value="emotional">
-        Emotional
-      </option>
-
-      <option value="professional">
-        Professional
-      </option>
-
-      <option value="short">
-        Short & Punchy
-      </option>
+        <option value="cinematic">Cinematic</option>
+        <option value="funny">Funny</option>
+        <option value="emotional">Emotional</option>
+        <option value="professional">Professional</option>
+        <option value="short">Short</option>
 
     </select>
 
     <button onclick="generateCaptions()">
-      Generate Captions
+        Generate Captions
     </button>
 
     <div id="captionResults" class="results"></div>
 
-  </div>
+</div>
 
+<div class="card">
 
-  <!-- HOOK GENERATOR -->
+    <h2>🎣 Hook Generator</h2>
 
-  <div class="tool">
-
-    <h2>🪝 Hook Generator</h2>
-
-    <p class="tool-description">
-      Create attention-grabbing opening lines based on your topic.
+    <p>
+        Generate attention-grabbing hooks for your content.
     </p>
 
     <textarea
-      id="hookInput"
-      placeholder="Example: I edited this Marvel scene in 20 minutes">
+        id="hookInput"
+        placeholder="Example: Marvel edit of Iron Man">
     </textarea>
 
     <button onclick="generateHooks()">
-      Generate Hooks
+        Generate Hooks
     </button>
 
     <div id="hookResults" class="results"></div>
 
-  </div>
+</div>
 
-
-  <!-- YOUTUBE TITLE GENERATOR -->
-
-  <div class="tool">
+<div class="card">
 
     <h2>🎬 YouTube Title Generator</h2>
 
-    <p class="tool-description">
-      Get clickable titles related to your actual video idea.
+    <p>
+        Create clickable titles related to your actual topic.
     </p>
 
     <textarea
-      id="titleInput"
-      placeholder="Example: I tried editing a cinematic Spider-Man edit">
+        id="titleInput"
+        placeholder="Example: My first Roblox video">
     </textarea>
 
     <button onclick="generateTitles()">
-      Generate Titles
+        Generate Titles
     </button>
 
     <div id="titleResults" class="results"></div>
 
-  </div>
+</div>
 
-
-  <!-- BIO GENERATOR -->
-
-  <div class="tool">
+<div class="card">
 
     <h2>👤 Bio Generator</h2>
 
-    <p class="tool-description">
-      Create a short bio based on your niche and personality.
+    <p>
+        Create creator bios based on your niche.
     </p>
 
     <input
-      id="bioInput"
-      placeholder="Example: video editor and Marvel creator">
+        id="bioInput"
+        placeholder="Example: Video editor">
 
     <button onclick="generateBios()">
-      Generate Bios
+        Generate Bios
     </button>
 
     <div id="bioResults" class="results"></div>
 
-  </div>
+</div>
 
-
-  <!-- HASHTAG GENERATOR -->
-
-  <div class="tool">
+<div class="card">
 
     <h2>#️⃣ Hashtag Generator</h2>
 
-    <p class="tool-description">
-      Generate hashtags that are actually connected to your topic.
+    <p>
+        Generate hashtags connected to your actual topic.
     </p>
 
     <textarea
-      id="hashtagInput"
-      placeholder="Example: Spider-Man cinematic edit">
+        id="hashtagInput"
+        placeholder="Example: Marvel Iron Man edit">
     </textarea>
 
     <button onclick="generateHashtags()">
-      Generate Hashtags
+        Generate Hashtags
     </button>
 
     <div id="hashtagResults" class="results"></div>
 
-  </div>
-
+</div>
 
 </section>
 
+</main>
 
 <footer>
-
-  <div>🔥 ViralForge</div>
-
-  <div style="margin-top:6px;">
-    Free creator tools • Built for creators
-  </div>
-
+    © 2026 ViralForge · Free tools built for creators.
 </footer>
-
 
 <script>
 
-
-/* =========================================================
-   VIRALFORGE ENGINE
-   ========================================================= */
-
-
-function normalize(text) {
-
-  return String(text || "")
-    .toLowerCase()
-    .replace(/[^\w\s'-]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-
+function normalize(text){
+    return String(text || "").toLowerCase().trim();
 }
 
+function hasAny(text,words){
+    return words.some(word => text.includes(word));
+}
 
-function hasAny(text, words) {
+function unique(arr){
+    return [...new Set(arr)];
+}
 
-  const value = normalize(text);
+function shuffle(arr){
+    return [...arr].sort(() => Math.random() - 0.5);
+}
 
-  return words.some(word => {
+function cleanTopic(text){
 
-    const w = normalize(word);
+    text = String(text || "").trim();
 
-    if (w.includes(" ")) {
-      return value.includes(w);
+    if(!text){
+        return "your content";
     }
 
-    return new RegExp(
-      "\\b" +
-      w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") +
-      "\\b"
-    ).test(value);
-
-  });
-
+    return text
+        .replace(/\s+/g," ")
+        .replace(/[.!?]+$/,"")
+        .trim();
 }
 
+function escapeHTML(text){
 
-function unique(array) {
-
-  return [...new Set(array.filter(Boolean))];
-
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 }
 
+function fallbackCopy(text){
 
-function shuffle(array) {
+    const area = document.createElement("textarea");
 
-  const copy = [...array];
+    area.value = text;
+    area.style.position = "fixed";
+    area.style.left = "-9999px";
 
-  for (let i = copy.length - 1; i > 0; i--) {
+    document.body.appendChild(area);
 
-    const j = Math.floor(Math.random() * (i + 1));
+    area.focus();
+    area.select();
 
-    [copy[i], copy[j]] = [copy[j], copy[i]];
+    try{
+        document.execCommand("copy");
+    }catch(e){}
 
-  }
-
-  return copy;
-
+    document.body.removeChild(area);
 }
 
+function copyText(text,button){
 
-function cleanTopic(text) {
+    if(navigator.clipboard && window.isSecureContext){
 
-  return String(text || "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/[.!?]+$/, "");
+        navigator.clipboard.writeText(text)
+        .then(() => {
 
-}
+            const old = button.innerText;
 
+            button.innerText = "Copied!";
 
-function escapeHTML(text) {
+            setTimeout(() => {
+                button.innerText = old;
+            },1200);
 
-  return String(text)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+        })
+        .catch(() => {
+            fallbackCopy(text);
+        });
 
-}
+    }else{
 
-
-function copyText(text, button) {
-
-  if (
-    navigator.clipboard &&
-    window.isSecureContext
-  ) {
-
-    navigator.clipboard.writeText(text)
-      .then(() => {
+        fallbackCopy(text);
 
         const old = button.innerText;
 
-        button.innerText = "✓ Copied";
+        button.innerText = "Copied!";
 
         setTimeout(() => {
-          button.innerText = old;
-        }, 1200);
-
-      })
-      .catch(() => {
-
-        fallbackCopy(text, button);
-
-      });
-
-  } else {
-
-    fallbackCopy(text, button);
-
-  }
-
+            button.innerText = old;
+        },1200);
+    }
 }
 
+function renderResults(containerId,results){
 
-function fallbackCopy(text, button) {
+    const container = document.getElementById(containerId);
 
-  const area = document.createElement("textarea");
+    container.innerHTML = "";
 
-  area.value = text;
+    results.forEach(result => {
 
-  area.style.position = "fixed";
-  area.style.opacity = "0";
+        const box = document.createElement("div");
 
-  document.body.appendChild(area);
+        box.className = "result";
 
-  area.focus();
-  area.select();
+        box.innerHTML = `
+            <span>${escapeHTML(result)}</span>
+            <button
+                class="copy-btn"
+                onclick="copyText(${JSON.stringify(result)},this)">
+                Copy
+            </button>
+        `;
 
-  try {
-
-    document.execCommand("copy");
-
-    const old = button.innerText;
-
-    button.innerText = "✓ Copied";
-
-    setTimeout(() => {
-      button.innerText = old;
-    }, 1200);
-
-  } catch (error) {
-
-    alert("Copy failed. Please select the text manually.");
-
-  }
-
-  document.body.removeChild(area);
-
-}
-
-
-function renderResults(containerId, results) {
-
-  const container =
-    document.getElementById(containerId);
-
-  container.innerHTML = "";
-
-  unique(results)
-    .slice(0, 6)
-    .forEach((text, index) => {
-
-      const box = document.createElement("div");
-
-      box.className = "result";
-
-      box.innerHTML = `
-        <div class="result-number">
-          Result ${index + 1}
-        </div>
-
-        <div>
-          ${escapeHTML(text)}
-        </div>
-
-        <button class="copy-btn">
-          Copy
-        </button>
-      `;
-
-      const button =
-        box.querySelector(".copy-btn");
-
-      button.onclick = () =>
-        copyText(text, button);
-
-      container.appendChild(box);
+        container.appendChild(box);
 
     });
-
 }
 
+function detectTopic(text){
 
-/* =========================================================
-   TOPIC DETECTION
-   ========================================================= */
+    const t = normalize(text);
 
-
-function detectTopic(text) {
-
-  const topics = {
-
-    marvel: [
-      "marvel",
-      "avengers",
-      "spiderman",
-      "spider-man",
-      "iron man",
-      "ironman",
-      "thor",
-      "hulk",
-      "captain america",
-      "deadpool",
-      "loki",
-      "wanda",
-      "hawkeye",
-      "thanos"
-    ],
-
-    football: [
-      "football",
-      "soccer",
-      "goal",
-      "striker",
-      "fifa",
-      "premier league",
-      "champions league",
-      "messi",
-      "ronaldo",
-      "mbappe",
-      "neymar"
-    ],
-
-    cricket: [
-      "cricket",
-      "wicket",
-      "batsman",
-      "batter",
-      "bowler",
-      "ipl",
-      "six",
-      "boundary",
-      "kohli",
-      "rohit",
-      "dhoni"
-    ],
-
-    basketball: [
-      "basketball",
-      "nba",
-      "dunk",
-      "hoop",
-      "lebron",
-      "curry",
-      "kobe"
-    ],
-
-    bike: [
-      "bike",
-      "bicycle",
-      "motorcycle",
-      "motorbike",
-      "scooter",
-      "rider",
-      "riding",
-      "cycling"
-    ],
-
-    gaming: [
-      "gaming",
-      "gamer",
-      "gameplay",
-      "roblox",
-      "blox fruits",
-      "minecraft",
-      "fortnite",
-      "valorant",
-      "free fire",
-      "bgmi",
-      "pubg",
-      "gta",
-      "cod"
-    ],
-
-    editing: [
-      "edit",
-      "editing",
-      "video editor",
-      "video editing",
-      "premiere",
-      "premiere pro",
-      "after effects",
-      "alight motion",
-      "capcut",
-      "davinci",
-      "editor"
-    ],
-
-    anime: [
-      "anime",
-      "naruto",
-      "one piece",
-      "dragon ball",
-      "goku",
-      "luffy",
-      "gojo",
-      "jujutsu",
-      "demon slayer",
-      "tanjiro",
-      "sukuna"
-    ],
-
-    education: [
-      "study",
-      "exam",
-      "school",
-      "math",
-      "mathematics",
-      "science",
-      "biology",
-      "chemistry",
-      "physics",
-      "neet",
-      "student"
-    ],
-
-    travel: [
-      "travel",
-      "trip",
-      "vacation",
-      "tour",
-      "holiday",
-      "mountain",
-      "beach",
-      "hiking",
-      "journey"
-    ],
-
-    food: [
-      "food",
-      "recipe",
-      "cooking",
-      "pizza",
-      "burger",
-      "chicken",
-      "restaurant",
-      "cake",
-      "coffee"
-    ],
-
-    cars: [
-      "car",
-      "cars",
-      "automobile",
-      "driving",
-      "supercar",
-      "bmw",
-      "mercedes",
-      "lamborghini",
-      "ferrari",
-      "porsche"
-    ],
-
-    creator: [
-      "youtube",
-      "youtube channel",
-      "subscriber",
-      "subscribers",
-      "creator",
-      "content creator",
-      "content creation",
-      "instagram",
-      "reels",
-      "shorts"
-    ]
-
-  };
-
-
-  for (const [topic, words] of Object.entries(topics)) {
-
-    if (hasAny(text, words)) {
-      return topic;
+    if(hasAny(t,[
+        "marvel","avengers","spiderman","spider-man",
+        "iron man","ironman","thor","hulk",
+        "captain america","deadpool","loki","wanda",
+        "hawkeye","thanos"
+    ])){
+        return "marvel";
     }
 
-  }
+    if(hasAny(t,[
+        "football","soccer","goal","striker","fifa",
+        "premier league","champions league","messi",
+        "ronaldo","mbappe","neymar"
+    ])){
+        return "football";
+    }
 
-  return "general";
+    if(hasAny(t,[
+        "cricket","wicket","batsman","batter","bowler",
+        "ipl","six","boundary","kohli","rohit","dhoni"
+    ])){
+        return "cricket";
+    }
 
+    if(hasAny(t,[
+        "basketball","nba","dunk","hoop","lebron",
+        "curry","kobe"
+    ])){
+        return "basketball";
+    }
+
+    if(hasAny(t,[
+        "bike","bicycle","motorcycle","motorbike",
+        "scooter","rider","riding","cycling"
+    ])){
+        return "bike";
+    }
+
+    if(hasAny(t,[
+        "gaming","gamer","gameplay","roblox","blox fruits",
+        "minecraft","fortnite","valorant","free fire",
+        "bgmi","pubg","gta","cod"
+    ])){
+        return "gaming";
+    }
+
+    if(hasAny(t,[
+        "edit","editing","video editor","video editing",
+        "premiere","premiere pro","after effects",
+        "alight motion","capcut","davinci","editor"
+    ])){
+        return "editing";
+    }
+
+    if(hasAny(t,[
+        "anime","naruto","one piece","dragon ball","goku",
+        "luffy","gojo","jujutsu","demon slayer",
+        "tanjiro","sukuna"
+    ])){
+        return "anime";
+    }
+
+    if(hasAny(t,[
+        "study","exam","school","math","mathematics",
+        "science","biology","chemistry","physics",
+        "neet","student"
+    ])){
+        return "education";
+    }
+
+    if(hasAny(t,[
+        "travel","trip","vacation","tour","holiday",
+        "mountain","beach","hiking","journey"
+    ])){
+        return "travel";
+    }
+
+    if(hasAny(t,[
+        "food","recipe","cooking","pizza","burger",
+        "chicken","restaurant","cake","coffee"
+    ])){
+        return "food";
+    }
+
+    if(hasAny(t,[
+        "car","cars","automobile","driving","supercar",
+        "bmw","mercedes","lamborghini","ferrari","porsche"
+    ])){
+        return "cars";
+    }
+
+    if(hasAny(t,[
+        "youtube","youtube channel","subscriber",
+        "subscribers","creator","content creator",
+        "content creation","instagram","reels","shorts"
+    ])){
+        return "creator";
+    }
+
+    return "general";
 }
 
+function detectIntent(text){
 
-/* =========================================================
-   INTENT DETECTION
-   ========================================================= */
+    const t = normalize(text);
 
+    if(hasAny(t,[
+        "fell","fallen","fall","crash","crashed",
+        "accident","broke","broken","failed",
+        "failure","mistake","wrong","lost"
+    ])){
+        return "incident";
+    }
 
-function detectIntent(text) {
+    if(hasAny(t,[
+        "win","won","victory","champion","championship",
+        "goal","score","success","achieved",
+        "achievement","milestone"
+    ])){
+        return "success";
+    }
 
-  if (hasAny(text, [
-    "fell",
-    "fallen",
-    "fall",
-    "crash",
-    "crashed",
-    "accident",
-    "broke",
-    "broken",
-    "failed",
-    "failure",
-    "mistake",
-    "wrong",
-    "lost"
-  ])) {
+    if(hasAny(t,[
+        "tutorial","how to","guide","learn",
+        "tips","steps","explained"
+    ])){
+        return "tutorial";
+    }
 
-    return "incident";
+    if(hasAny(t,[
+        "review","testing","test","tried","experiment"
+    ])){
+        return "review";
+    }
 
-  }
+    if(hasAny(t,[
+        "funny","meme","joke","comedy","lol","hilarious"
+    ])){
+        return "funny";
+    }
 
+    if(hasAny(t,[
+        "sad","emotional","miss","memories",
+        "memory","heartbreak","alone"
+    ])){
+        return "emotional";
+    }
 
-  if (hasAny(text, [
-    "win",
-    "won",
-    "victory",
-    "champion",
-    "championship",
-    "goal",
-    "score",
-    "success",
-    "achieved",
-    "achievement",
-    "milestone"
-  ])) {
-
-    return "success";
-
-  }
-
-
-  if (hasAny(text, [
-    "tutorial",
-    "how to",
-    "guide",
-    "learn",
-    "tips",
-    "steps",
-    "explained"
-  ])) {
-
-    return "tutorial";
-
-  }
-
-
-  if (hasAny(text, [
-    "review",
-    "testing",
-    "test",
-    "tried",
-    "experiment"
-  ])) {
-
-    return "review";
-
-  }
-
-
-  if (hasAny(text, [
-    "funny",
-    "meme",
-    "joke",
-    "comedy",
-    "lol",
-    "hilarious"
-  ])) {
-
-    return "funny";
-
-  }
-
-
-  if (hasAny(text, [
-    "sad",
-    "emotional",
-    "miss",
-    "memories",
-    "memory",
-    "heartbreak",
-    "alone"
-  ])) {
-
-    return "emotional";
-
-  }
-
-
-  return "general";
-
+    return "general";
 }
+  function generateCaptions(){
 
+    const input = document.getElementById("captionInput").value;
+    const style = document.getElementById("captionStyle").value;
 
-/* =========================================================
-   CAPTION GENERATOR
-   ========================================================= */
+    if(!input.trim()){
+        renderResults("captionResults",["Enter a topic first."]);
+        return;
+    }
 
+    const topic = cleanTopic(input);
+    const type = detectTopic(input);
+    const intent = detectIntent(input);
 
-function generateCaptions() {
+    let results = [];
 
-  const input =
-    document.getElementById("captionInput")
-      .value.trim();
+    if(type === "bike" && intent === "incident"){
 
-  if (!input) {
+        results = [
+            `That moment when ${topic} did NOT go as planned 😭`,
+            `${topic}... yeah, we're not talking about that part 💀`,
+            `One second everything was fine. Then ${topic} happened.`,
+            `POV: ${topic} suddenly became the main character 😭`,
+            `Not my proudest moment, but definitely a memorable one.`,
+            `Things went from normal to WHAT JUST HAPPENED real quick 💀`
+        ];
 
-    alert(
-      "Tell ViralForge what your post/video is about."
+    }else if(type === "football" && intent === "success"){
+
+        results = [
+            `${topic} and suddenly the whole game changed. ⚽🔥`,
+            `That moment was worth every second. 🏆`,
+            `One play. One moment. Pure football.`,
+            `When the hard work finally shows up on the pitch. ⚽`,
+            `The kind of moment you replay again and again.`,
+            `Football is different when everything clicks. 🔥`
+        ];
+
+    }else if(type === "cricket" && intent === "success"){
+
+        results = [
+            `${topic} and the crowd went absolutely crazy. 🏏🔥`,
+            `One shot. One moment. Pure cricket.`,
+            `That was not just a play. That was a statement.`,
+            `When preparation meets the perfect moment. 🏏`,
+            `Definitely one to remember.`,
+            `Cricket hits different when moments like this happen. 🔥`
+        ];
+
+    }else if(type === "marvel"){
+
+        results = [
+            `${topic} — some moments just hit different. ⚡`,
+            `The kind of Marvel moment you never forget.`,
+            `One scene. Infinite memories.`,
+            `Marvel really knew how to make this moment iconic.`,
+            `Still thinking about ${topic}.`,
+            `This scene deserves another replay. 🔥`
+        ];
+
+    }else if(type === "gaming"){
+
+        results = [
+            `${topic} was absolutely NOT supposed to go like this 💀`,
+            `POV: ${topic} suddenly became serious.`,
+            `That one gaming moment you'll remember.`,
+            `Everything was normal until ${topic} happened.`,
+            `This is why we keep playing. 🎮🔥`,
+            `Bro really thought ${topic} was going to be easy 💀`
+        ];
+
+    }else if(type === "editing"){
+
+        results = [
+            `${topic} — built frame by frame. 🎬`,
+            `Turning simple clips into something different.`,
+            `Every cut has a reason.`,
+            `Just an editor doing what editors do.`,
+            `The timeline was fighting back, but we won. 😭`,
+            `Another project. Another vision brought to life.`
+        ];
+
+    }else if(intent === "incident"){
+
+        results = [
+            `${topic} definitely wasn't part of the plan 😭`,
+            `Everything was fine until ${topic} happened.`,
+            `Well... that escalated quickly 💀`,
+            `One moment changed everything.`,
+            `Not exactly how I imagined this going.`,
+            `Definitely a moment I won't forget.`
+        ];
+
+    }else if(intent === "success"){
+
+        results = [
+            `${topic} — hard work finally showing.`,
+            `This moment made everything worth it. 🔥`,
+            `Small step. Big moment.`,
+            `The result speaks for itself.`,
+            `One of those moments you remember.`,
+            `Started with an idea. Ended with this.`
+        ];
+
+    }else{
+
+        results = [
+            `${topic} — just getting started. 🚀`,
+            `Something about ${topic} just hits different.`,
+            `Made this with one goal: make it memorable.`,
+            `Sometimes you just have to create and see where it goes.`,
+            `${topic}. No overthinking. Just vibes.`,
+            `One post. One idea. Let's see where it goes.`
+        ];
+    }
+
+    if(style === "funny"){
+
+        results = [
+            `Me pretending I knew what I was doing with ${topic} 💀`,
+            `${topic} really said: "Let's make this interesting." 😭`,
+            `Nobody: ...\nAbsolutely nobody: ...\n${topic}: 💀`,
+            `Well, that went exactly as expected. 😂`,
+            `${topic} was a terrible idea. 10/10 would do it again.`,
+            `POV: You thought ${topic} would be easy. 💀`
+        ];
+
+    }else if(style === "emotional"){
+
+        results = [
+            `${topic} — some moments stay with you.`,
+            `Not every moment needs an explanation.`,
+            `Some memories hit harder than others.`,
+            `A moment worth remembering.`,
+            `${topic} feels different when you look back.`,
+            `Some things simply mean more with time.`
+        ];
+
+    }else if(style === "professional"){
+
+        results = [
+            `Sharing a moment from ${topic}.`,
+            `Focused on the process. Proud of the result.`,
+            `Another step forward with ${topic}.`,
+            `Creating, learning and improving every day.`,
+            `A simple idea turned into something meaningful.`,
+            `Progress comes from consistently showing up.`
+        ];
+
+    }else if(style === "short"){
+
+        results = [
+            `${topic}. 🔥`,
+            `Built different.`,
+            `Worth the replay.`,
+            `Just vibes.`,
+            `Say less.`,
+            `That moment.`
+        ];
+
+    }else if(style === "cinematic"){
+
+        results = [
+            `${topic} — one moment, one story.`,
+            `Some moments deserve the cinematic treatment.`,
+            `Every frame tells something.`,
+            `A moment frozen in time.`,
+            `The scene. The feeling. The memory.`,
+            `${topic} — more than just a moment.`
+        ];
+    }
+
+    renderResults(
+        "captionResults",
+        shuffle(unique(results)).slice(0,6)
     );
-
-    return;
-
-  }
-
-  const style =
-    document.getElementById("captionStyle").value;
-
-  const topic = detectTopic(input);
-  const intent = detectIntent(input);
-  const subject = cleanTopic(input);
-
-  let results = [];
-
-
-  if (style === "funny") {
-
-    results = [
-
-      `POV: ${subject} and absolutely nothing went according to plan 💀`,
-
-      `Well... ${subject}. That happened. 😭`,
-
-      `Me: "I've got this." Also me: ${subject} 💀`,
-
-      `Nobody: ... Absolutely nobody: ${subject} 😂`,
-
-      `${subject} was NOT part of the plan 😭`
-
-    ];
-
-  }
-
-
-  else if (style === "emotional") {
-
-    results = [
-
-      `${subject}. Some moments stay with you longer than expected.`,
-
-      `Maybe it was just a moment. Maybe it meant more than that.`,
-
-      `Not every moment needs an explanation.`,
-
-      `Some memories hit differently when you look back.`,
-
-      `${subject} — one of those moments I'll remember.`
-
-    ];
-
-  }
-
-
-  else if (style === "professional") {
-
-    results = [
-
-      `${subject}. Creating, learning and improving with every project.`,
-
-      `A closer look at ${subject} — focused on the details that matter.`,
-
-      `Another project. Another lesson. Another step forward.`,
-
-      `Turning ideas into content, one project at a time.`,
-
-      `A simple idea can become something worth sharing.`
-
-    ];
-
-  }
-
-
-  else if (style === "short") {
-
-    results = [
-
-      `${subject}. That's it. That's the post.`,
-
-      `This moment >>>`,
-
-      `Worth the replay.`,
-
-      `Had to post this one.`,
-
-      `No explanation needed.`
-
-    ];
-
-  }
-
-
-  else {
-
-    if (
-      topic === "bike" &&
-      intent === "incident"
-    ) {
-
-      results = [
-
-        `One second I was riding. The next second, the bike was on the ground. 😭`,
-
-        `That was definitely NOT how the ride was supposed to end.`,
-
-        `POV: The ride was going perfectly... until it wasn't.`,
-
-        `A normal ride turned into a memory real quick.`,
-
-        `Everything was fine until this happened. 💀`
-
-      ];
-
-    }
-
-
-    else if (
-      topic === "football" &&
-      intent === "success"
-    ) {
-
-      results = [
-
-        `That finish. That moment. That feeling. ⚽`,
-
-        `Some goals are remembered long after the final whistle.`,
-
-        `When the work finally shows on the scoreboard.`,
-
-        `One moment can change the entire game.`,
-
-        `This is why football is different. ⚽🔥`
-
-      ];
-
-    }
-
-
-    else if (
-      topic === "cricket" &&
-      intent === "success"
-    ) {
-
-      results = [
-
-        `Pressure creates moments. This was one of them. 🏏`,
-
-        `One shot. One moment. One memory.`,
-
-        `The kind of moment every cricket fan remembers.`,
-
-        `When timing meets confidence. 🏏`,
-
-        `That was pure cricket magic.`
-
-      ];
-
-    }
-
-
-    else if (topic === "marvel") {
-
-      results = [
-
-        `Some Marvel moments never get old.`,
-
-        `The kind of scene you replay without even thinking.`,
-
-        `Marvel really knew how to make moments feel bigger.`,
-
-        `One scene. Endless replays.`,
-
-        `This moment deserves another watch.`
-
-      ];
-
-    }
-
-
-    else if (topic === "gaming") {
-
-      results = [
-
-        `One game. One moment. Absolute chaos. 🎮`,
-
-        `You already know this part gets replayed.`,
-
-        `Gaming hits different when everything goes right.`,
-
-        `That was either skill... or pure luck. 💀`,
-
-        `Just another normal gaming session. Totally normal. 😭`
-
-      ];
-
-    }
-
-
-    else if (topic === "editing") {
-
-      results = [
-
-        `From raw footage to this. The details make the difference.`,
-
-        `A few cuts, some timing and a lot of patience.`,
-
-        `The edit hits different when every frame has a purpose.`,
-
-        `Built frame by frame.`,
-
-        `The timeline tells the story before anyone sees the final result.`
-
-      ];
-
-    }
-
-
-    else if (topic === "education") {
-
-      results = [
-
-        `One more concept understood. One step closer.`,
-
-        `The goal isn't perfection. It's progress.`,
-
-        `Study now. Thank yourself later.`,
-
-        `Another topic checked off the list.`,
-
-        `Small progress still counts. 📚`
-
-      ];
-
-    }
-
-
-    else if (intent === "incident") {
-
-      results = [
-
-        `Well... that definitely wasn't part of the plan.`,
-
-        `Everything was normal until this happened.`,
-
-        `One unexpected moment changed everything.`,
-
-        `You really never know what happens next.`,
-
-        `And that's how the situation changed in seconds.`
-
-      ];
-
-    }
-
-
-    else if (intent === "success") {
-
-      results = [
-
-        `The result of staying consistent.`,
-
-        `Small steps eventually become big moments.`,
-
-        `This moment made all the effort worth it.`,
-
-        `Another milestone unlocked.`,
-
-        `Proof that consistency adds up.`
-
-      ];
-
-    }
-
-
-    else {
-
-      results = [
-
-        `${subject} — worth sharing.`,
-
-        `Here's something about ${subject} you might not expect.`,
-
-        `A different look at ${subject}.`,
-
-        `This one deserved a post.`,
-
-        `Sometimes the simplest moments make the best content.`
-
-      ];
-
-    }
-
-  }
-
-
-  renderResults(
-    "captionResults",
-    shuffle(results)
-  );
-
-}
-  /* =========================================================
-   HOOK GENERATOR
-   ========================================================= */
-
-function generateHooks() {
-
-  const input =
-    document.getElementById("hookInput").value.trim();
-
-  if (!input) {
-    alert("Enter your video idea first.");
-    return;
-  }
-
-  const topic = detectTopic(input);
-  const intent = detectIntent(input);
-  const subject = cleanTopic(input);
-
-  let hooks = [];
-
-  if (topic === "bike" && intent === "incident") {
-
-    hooks = [
-      "This ride went wrong in seconds...",
-      "I really thought this ride was going perfectly.",
-      "Watch what happens next.",
-      "Everything was normal until this moment.",
-      "I definitely wasn't expecting this."
-    ];
-
-  }
-
-  else if (topic === "marvel") {
-
-    hooks = [
-      "You probably missed this detail...",
-      "This Marvel moment hits completely differently when you notice this.",
-      "Nobody talks enough about this scene.",
-      "Wait until you notice what happens here.",
-      "This is why this scene still works."
-    ];
-
-  }
-
-  else if (topic === "gaming") {
-
-    hooks = [
-      "I thought this was going to be an easy game...",
-      "This happened at the worst possible moment.",
-      "I was NOT ready for what happened next.",
-      "One mistake changed the entire game.",
-      "Wait for the ending."
-    ];
-
-  }
-
-  else if (topic === "editing") {
-
-    hooks = [
-      "Here's what changed this edit completely.",
-      "This is how I turned the raw clip into this.",
-      "The final result wasn't the hard part.",
-      "Watch the difference before and after.",
-      "One editing decision changed everything."
-    ];
-
-  }
-
-  else if (topic === "football") {
-
-    hooks = [
-      "Nobody expected this finish...",
-      "Watch the final seconds.",
-      "This changed the entire game.",
-      "The moment everyone was waiting for.",
-      "You have to see this goal."
-    ];
-
-  }
-
-  else if (topic === "cricket") {
-
-    hooks = [
-      "Wait for the final shot...",
-      "This changed the entire innings.",
-      "The pressure was insane here.",
-      "Watch what happens after the ball is delivered.",
-      "This is why cricket can change in seconds."
-    ];
-
-  }
-
-  else if (intent === "incident") {
-
-    hooks = [
-      "Everything was fine until this happened...",
-      "I wasn't expecting this at all.",
-      "This went wrong way faster than expected.",
-      "Watch the moment everything changes.",
-      "You won't believe how this ended."
-    ];
-
-  }
-
-  else if (intent === "tutorial") {
-
-    hooks = [
-      `Before you try ${subject}, watch this.`,
-      `Here's the part nobody explains about ${subject}.`,
-      `If you're struggling with ${subject}, start here.`,
-      `Three things you should know about ${subject}.`,
-      `Stop doing this when working on ${subject}.`
-    ];
-
-  }
-
-  else {
-
-    hooks = [
-      `You need to see this about ${subject}.`,
-      `Here's something interesting about ${subject}.`,
-      `Most people overlook this.`,
-      `Wait until you see the result.`,
-      `This changed the way I look at it.`
-    ];
-
-  }
-
-  renderResults(
-    "hookResults",
-    shuffle(hooks)
-  );
 }
 
 
-/* =========================================================
-   YOUTUBE TITLE GENERATOR
-   ========================================================= */
+function generateHooks(){
 
-function generateTitles() {
+    const input = document.getElementById("hookInput").value;
 
-  const input =
-    document.getElementById("titleInput").value.trim();
+    if(!input.trim()){
+        renderResults("hookResults",["Enter a topic first."]);
+        return;
+    }
 
-  if (!input) {
-    alert("Enter your video idea first.");
-    return;
-  }
+    const topic = cleanTopic(input);
+    const type = detectTopic(input);
+    const intent = detectIntent(input);
 
-  const topic = detectTopic(input);
-  const intent = detectIntent(input);
-  const subject = cleanTopic(input);
+    let results = [];
 
-  let titles = [];
+    if(type === "bike" && intent === "incident"){
 
-  if (topic === "bike" && intent === "incident") {
+        results = [
+            `I thought this ride was going to be normal...`,
+            `This is exactly why you never get too comfortable.`,
+            `Everything was fine until THIS happened.`,
+            `You won't believe how quickly this went wrong.`,
+            `One second. That's all it took.`,
+            `This was NOT supposed to happen.`
+        ];
 
-    titles = [
-      "My Bike Fell Down... I Was NOT Ready For This",
-      "This Bike Ride Went Completely Wrong",
-      "Everything Was Fine Until My Bike Fell",
-      "The Ride That Did NOT Go As Planned",
-      "I Didn't Expect This To Happen On My Bike"
-    ];
+    }else if(type === "marvel"){
 
-  }
+        results = [
+            `You probably missed this detail in ${topic}.`,
+            `This Marvel moment deserves more attention.`,
+            `Remember when ${topic} happened?`,
+            `This scene hits completely different now.`,
+            `Here's why this moment is still iconic.`,
+            `Only real Marvel fans will remember this.`
+        ];
 
-  else if (topic === "football" && intent === "success") {
+    }else if(type === "gaming"){
 
-    titles = [
-      "This Goal Changed Everything",
-      "The Goal Everyone Was Waiting For",
-      "What A Finish! 🔥",
-      "The Moment The Game Changed",
-      "This Was INSANE From Start To Finish"
-    ];
+        results = [
+            `I genuinely didn't expect this to happen.`,
+            `This changed the entire game.`,
+            `Wait until you see what happens next.`,
+            `I thought this was going to be easy...`,
+            `This might be my craziest gaming moment.`,
+            `You need to see the ending.`
+        ];
 
-  }
+    }else if(type === "editing"){
 
-  else if (topic === "cricket") {
+        results = [
+            `Here's what happens when you take an edit too far.`,
+            `This started as a simple edit...`,
+            `The before and after is crazy.`,
+            `I spent way too long on this edit.`,
+            `Watch what happens when every frame matters.`,
+            `This is why editing takes time.`
+        ];
 
-    titles = [
-      "This Cricket Moment Was Absolutely Insane",
-      "The Shot That Changed Everything",
-      "Nobody Expected This Moment",
-      "What Happened Next Was Crazy",
-      "The Pressure Was REAL In This Moment"
-    ];
+    }else if(type === "football" || type === "cricket"){
 
-  }
+        results = [
+            `Nobody expected THIS moment.`,
+            `This changed the entire game.`,
+            `Wait for the finish...`,
+            `You have to see this play.`,
+            `One moment changed everything.`,
+            `This is why we love the game.`
+        ];
 
-  else if (topic === "marvel") {
+    }else if(intent === "tutorial"){
 
-    titles = [
-      "This Marvel Scene Hits Completely Different",
-      "You Probably Missed This Marvel Detail",
-      "The Marvel Moment Everyone Remembers",
-      "This Scene Deserved More Attention",
-      "One Of Marvel's Most Rewatchable Moments"
-    ];
+        results = [
+            `Here's the easiest way to understand ${topic}.`,
+            `Stop doing ${topic} the hard way.`,
+            `Before you try ${topic}, watch this.`,
+            `I wish I knew this about ${topic} earlier.`,
+            `Here's what nobody tells you about ${topic}.`,
+            `Let's break down ${topic} in seconds.`
+        ];
 
-  }
+    }else{
 
-  else if (topic === "gaming") {
+        results = [
+            `You need to see what happened with ${topic}.`,
+            `I wasn't expecting this from ${topic}.`,
+            `Wait until you see the result.`,
+            `This changed everything.`,
+            `There's more to ${topic} than you think.`,
+            `Watch this before you scroll.`
+        ];
+    }
 
-    titles = [
-      "This Gaming Session Went Completely Wrong",
-      "I Was NOT Ready For What Happened",
-      "The Craziest Moment Of This Game",
-      "This Changed The Entire Game",
-      "You Won't Believe How This Ended"
-    ];
-
-  }
-
-  else if (topic === "editing") {
-
-    titles = [
-      `I Turned This Into A Cinematic Edit`,
-      `How I Edited ${subject}`,
-      `The Before & After Of This Edit`,
-      `This Editing Trick Changed Everything`,
-      `From Raw Footage To This`
-    ];
-
-  }
-
-  else if (topic === "education") {
-
-    titles = [
-      `How I Finally Understood ${subject}`,
-      `${subject} Explained Simply`,
-      `Things You Need To Know About ${subject}`,
-      `The Easiest Way To Understand ${subject}`,
-      `Stop Making This Mistake In ${subject}`
-    ];
-
-  }
-
-  else if (intent === "tutorial") {
-
-    titles = [
-      `How To ${subject}`,
-      `${subject} Explained Simply`,
-      `The Complete Beginner's Guide To ${subject}`,
-      `5 Things You Should Know About ${subject}`,
-      `I Tried ${subject} — Here's What Happened`
-    ];
-
-  }
-
-  else {
-
-    titles = [
-      `${subject} — Here's What Happened`,
-      `I Tried ${subject} And This Happened`,
-      `The Truth About ${subject}`,
-      `Everything You Need To Know About ${subject}`,
-      `This Changed Everything About ${subject}`
-    ];
-
-  }
-
-  renderResults(
-    "titleResults",
-    shuffle(titles)
-  );
+    renderResults(
+        "hookResults",
+        shuffle(unique(results)).slice(0,5)
+    );
 }
 
 
-/* =========================================================
-   BIO GENERATOR
-   ========================================================= */
+function generateTitles(){
 
-function generateBios() {
+    const input = document.getElementById("titleInput").value;
 
-  const input =
-    document.getElementById("bioInput").value.trim();
+    if(!input.trim()){
+        renderResults("titleResults",["Enter a topic first."]);
+        return;
+    }
 
-  if (!input) {
-    alert("Tell us your niche first.");
-    return;
-  }
+    const topic = cleanTopic(input);
+    const type = detectTopic(input);
+    const intent = detectIntent(input);
 
-  const topic = detectTopic(input);
+    let results = [];
 
-  let bios = [];
+    if(type === "bike" && intent === "incident"){
 
-  if (topic === "editing") {
+        results = [
+            `My Bike Fell Down... This Is What Happened`,
+            `The Ride That Went Completely Wrong`,
+            `I Was NOT Ready For This Bike Fail`,
+            `Everything Was Fine Until My Bike Fell`,
+            `My Most Unexpected Bike Moment`,
+            `This Bike Ride Took A Terrible Turn`
+        ];
 
-    bios = [
-      `🎬 Video Editor
-⚡ Turning ideas into visuals
-📩 Open for creative projects`,
+    }else if(type === "football" && intent === "success"){
 
-      `🎥 Editor & Visual Storyteller
-✨ Frames • Timing • Creativity
+        results = [
+            `${topic} Changed The Entire Game`,
+            `The Moment Everyone Was Waiting For`,
+            `This Football Moment Was INSANE`,
+            `One Play That Changed Everything`,
+            `The Goal That Nobody Expected`,
+            `You Have To See This Finish`
+        ];
+
+    }else if(type === "cricket"){
+
+        results = [
+            `${topic} Was Absolutely Unreal`,
+            `The Cricket Moment Everyone Will Remember`,
+            `This Shot Changed Everything`,
+            `Nobody Expected This From ${topic}`,
+            `One Moment. One Massive Result.`,
+            `You Have To See This Cricket Moment`
+        ];
+
+    }else if(type === "marvel"){
+
+        results = [
+            `${topic} - The Moment We Still Remember`,
+            `Why This Marvel Moment Is So Iconic`,
+            `The Most Underrated Moment In ${topic}`,
+            `This Scene Hits Different Now`,
+            `Marvel Fans Will Remember This`,
+            `The Scene That Changed Everything`
+        ];
+
+    }else if(type === "gaming"){
+
+        results = [
+            `${topic} Was NOT Supposed To Happen`,
+            `My Craziest ${topic} Moment`,
+            `I Can't Believe This Happened`,
+            `The Moment Everything Changed`,
+            `This Game Got WAY Too Serious`,
+            `You Need To See What Happened`
+        ];
+
+    }else if(type === "editing"){
+
+        results = [
+            `I Turned ${topic} Into THIS`,
+            `The Edit Took Longer Than Expected`,
+            `My Latest Edit - Before & After`,
+            `How This Edit Turned Out`,
+            `I Didn't Expect The Final Result`,
+            `Every Frame Was Worth It`
+        ];
+
+    }else if(type === "education"){
+
+        results = [
+            `${topic} Explained Simply`,
+            `Everything You Need To Know About ${topic}`,
+            `${topic} In The Easiest Way Possible`,
+            `Don't Make This Mistake With ${topic}`,
+            `${topic} Made Easy`,
+            `Learn ${topic} In Minutes`
+        ];
+
+    }else if(intent === "tutorial"){
+
+        results = [
+            `How To ${topic} - Easy Guide`,
+            `${topic} Explained Step By Step`,
+            `The Easiest Way To ${topic}`,
+            `Stop Doing ${topic} The Hard Way`,
+            `Everything You Need To Know About ${topic}`,
+            `${topic} Tutorial For Beginners`
+        ];
+
+    }else{
+
+        results = [
+            `${topic} - Here's What Happened`,
+            `I Tried ${topic} And This Happened`,
+            `The Truth About ${topic}`,
+            `You Need To See This`,
+            `${topic} Was NOT What I Expected`,
+            `What Happens When You Try ${topic}?`
+        ];
+    }
+
+    renderResults(
+        "titleResults",
+        shuffle(unique(results)).slice(0,5)
+    );
+}
+
+
+function generateBios(){
+
+    const input = document.getElementById("bioInput").value;
+
+    if(!input.trim()){
+        renderResults("bioResults",["Enter your niche first."]);
+        return;
+    }
+
+    const topic = cleanTopic(input);
+    const type = detectTopic(input);
+
+    let results = [];
+
+    if(type === "editing"){
+
+        results = [
+`🎬 Video Editor
+⚡ Turning ideas into edits
+📩 Open for projects`,
+
+`🎥 Editor | Creator
+✨ Making every frame count
+📩 DM for work`,
+
+`🎬 Professional Video Editor
+🔥 Edits that grab attention
 📩 Let's create something`,
 
-      `🎬 Editing visuals that deserve attention
-⚡ Creative mind behind the timeline
-📩 DM for projects`,
-
-      `Video Editor | Visual Creator
-Turning raw footage into stories.
-🎬⚡`
-    ];
-
-  }
-
-  else if (topic === "gaming") {
-
-    bios = [
-      `🎮 Gamer & Content Creator
-🔥 Gameplay • Clips • Chaos
-📩 Collabs open`,
-
-      `🎮 Gaming content
-⚡ Clips worth replaying
-🏆 More coming soon`,
-
-      `Gaming • Entertainment • Content
-🎮 One clip at a time.`,
-
-      `🎮 Just here to play.
-🔥 Turning gameplay into content.`
-    ];
-
-  }
-
-  else if (topic === "football") {
-
-    bios = [
-      `⚽ Football Content
-🔥 Goals • Moments • Passion
-📩 Collabs open`,
-
-      `⚽ For the love of the beautiful game
-🔥 Football edits & moments`,
-
-      `Football • Edits • Entertainment
-⚽ Every match has a story.`
-    ];
-
-  }
-
-  else if (topic === "marvel") {
-
-    bios = [
-      `🦸 Marvel Content
-🎬 Scenes • Edits • Moments
-⚡ For the fans`,
-
-      `Marvel moments, edits & more.
-🦸‍♂️🎬⚡`,
-
-      `🎬 Your daily dose of Marvel
-⚡ Edits • Scenes • Memories`
-    ];
-
-  }
-
-  else if (topic === "education") {
-
-    bios = [
-      `📚 Student & Learner
-🎯 Progress over perfection
-🧠 Learning something every day`,
-
-      `📖 Study • Learn • Improve
-🎯 One chapter at a time.`,
-
-      `🧠 Learning made simple
-📚 Notes • Study • Progress`
-    ];
-
-  }
-
-  else if (topic === "travel") {
-
-    bios = [
-      `🌍 Chasing places, not things.
-📸 Capturing the journey.`,
-
-      `✈️ Travel • Explore • Capture
-🌍 More places. More memories.`,
-
-      `🌄 Collecting moments around the world.`
-    ];
-
-  }
-
-  else {
-
-    bios = [
-      `✨ ${input}
-🚀 Creating. Improving. Growing.`,
-
-      `Content Creator
-🔥 Turning ideas into content
-📩 Open for collabs`,
-
-      `Creating things worth sharing.
-⚡ One post at a time.`,
-
-      `Just creating and seeing where it goes. 🚀`
-    ];
-
-  }
-
-  renderResults(
-    "bioResults",
-    shuffle(bios)
-  );
-}
-
-
-/* =========================================================
-   HASHTAG GENERATOR
-   ========================================================= */
-
-function generateHashtags() {
-
-  const input =
-    document.getElementById("hashtagInput").value.trim();
-
-  if (!input) {
-    alert("Enter your topic first.");
-    return;
-  }
-
-  const topic = detectTopic(input);
-  const intent = detectIntent(input);
-
-  let hashtags = [];
-
-  const sets = {
-
-    bike: [
-      "#Bike",
-      "#Biking",
-      "#BikeLife",
-      "#Cycling",
-      "#BikeRide",
-      "#Rider",
-      "#Motorcycle",
-      "#Motorbike",
-      "#Ride",
-      "#Cyclist",
-      "#TwoWheels",
-      "#BikeVideo"
-    ],
-
-    football: [
-      "#Football",
-      "#Soccer",
-      "#FootballEdit",
-      "#FootballFans",
-      "#FootballReels",
-      "#Goal",
-      "#MatchDay",
-      "#FootballSkills",
-      "#FootballVideo",
-      "#PremierLeague",
-      "#FIFA",
-      "#FootballContent"
-    ],
-
-    cricket: [
-      "#Cricket",
-      "#CricketEdit",
-      "#CricketFans",
-      "#CricketReels",
-      "#CricketVideo",
-      "#IPL",
-      "#CricketLovers",
-      "#Batting",
-      "#Bowling",
-      "#Wicket",
-      "#CricketContent"
-    ],
-
-    basketball: [
-      "#Basketball",
-      "#NBA",
-      "#BasketballEdit",
-      "#BasketballReels",
-      "#Dunk",
-      "#Hoops",
-      "#BasketballLife",
-      "#BasketballVideo",
-      "#BasketballFans"
-    ],
-
-    marvel: [
-      "#Marvel",
-      "#MarvelEdit",
-      "#MarvelFans",
-      "#MarvelReels",
-      "#MarvelStudios",
-      "#Avengers",
-      "#MarvelUniverse",
-      "#Superhero",
-      "#MarvelContent",
-      "#MarvelScene",
-      "#MarvelEdits"
-    ],
-
-    gaming: [
-      "#Gaming",
-      "#GamingReels",
-      "#GamingContent",
-      "#Gameplay",
-      "#Gamer",
-      "#GamingCommunity",
-      "#GamingClips",
-      "#GamingVideo",
-      "#GameEdit",
-      "#GamingShorts"
-    ],
-
-    editing: [
-      "#VideoEditing",
-      "#VideoEditor",
-      "#Editing",
-      "#Editor",
-      "#VideoEdit",
-      "#EditingTips",
-      "#EditReels",
-      "#CreativeEditing",
-      "#ContentCreator",
-      "#VideoCreator",
-      "#Editors"
-    ],
-
-    anime: [
-      "#Anime",
-      "#AnimeEdit",
-      "#AnimeReels",
-      "#AnimeFans",
-      "#AnimeCommunity",
-      "#AnimeScene",
-      "#AnimeContent",
-      "#Manga",
-      "#Otaku"
-    ],
-
-    education: [
-      "#Study",
-      "#StudyMotivation",
-      "#Student",
-      "#StudyGram",
-      "#Education",
-      "#StudyTips",
-      "#Exams",
-      "#Learning",
-      "#School",
-      "#StudyReels"
-    ],
-
-    travel: [
-      "#Travel",
-      "#TravelReels",
-      "#TravelPhotography",
-      "#TravelVideo",
-      "#Explore",
-      "#Adventure",
-      "#Vacation",
-      "#TravelContent",
-      "#Wanderlust"
-    ],
-
-    food: [
-      "#Food",
-      "#Foodie",
-      "#FoodReels",
-      "#FoodContent",
-      "#Cooking",
-      "#Recipe",
-      "#FoodPhotography",
-      "#FoodLovers",
-      "#Delicious"
-    ],
-
-    cars: [
-      "#Cars",
-      "#CarEdit",
-      "#CarReels",
-      "#CarLovers",
-      "#Supercars",
-      "#CarCulture",
-      "#Automotive",
-      "#Driving",
-      "#CarVideo",
-      "#LuxuryCars"
-    ],
-
-    creator: [
-      "#ContentCreator",
-      "#Creator",
-      "#InstagramCreator",
-      "#YouTube",
-      "#YouTubeShorts",
-      "#Reels",
-      "#ContentCreation",
-      "#CreatorCommunity",
-      "#SocialMedia"
-    ],
-
-    general: [
-      "#Content",
-      "#Creator",
-      "#Reels",
-      "#Shorts",
-      "#ViralContent",
-      "#ContentCreator",
-      "#Creative",
-      "#Trending"
-    ]
-
-  };
-
-
-  hashtags.push(
-    ...(sets[topic] || sets.general)
-  );
-
-
-  /* INCIDENT HASHTAGS */
-
-  if (intent === "incident") {
-
-    if (topic === "bike") {
-
-      hashtags.push(
-        "#BikeFail",
-        "#BikeAccident",
-        "#RidingFail",
-        "#UnexpectedMoment"
-      );
-
-    } else {
-
-      hashtags.push(
-        "#Fail",
-        "#Unexpected",
-        "#PlotTwist",
-        "#UnexpectedMoment"
-      );
-
+`⚡ Video Editor
+🎞️ Storytelling through every frame
+📩 Available for projects`
+        ];
+
+    }else if(type === "gaming"){
+
+        results = [
+`🎮 Gamer & Creator
+🔥 Gameplay | Clips | Highlights
+📩 DM for collabs`,
+
+`🎮 Gaming Content Creator
+⚡ Playing. Creating. Repeating.
+🔥 New content regularly`,
+
+`🕹️ Gaming | Clips | Entertainment
+🔥 Just here to have fun
+📩 Collabs open`
+        ];
+
+    }else if(type === "football"){
+
+        results = [
+`⚽ Football Content
+🔥 Goals | Skills | Moments
+📩 DM for collaborations`,
+
+`⚽ Football Fan & Creator
+🏆 Chasing unforgettable moments
+🔥 New content regularly`
+        ];
+
+    }else if(type === "marvel"){
+
+        results = [
+`⚡ Marvel Content
+🎬 Edits | Scenes | Moments
+🔥 For Marvel fans`,
+
+`🦸 Marvel Creator
+🎬 Bringing iconic moments to life
+🔥 Follow for more`
+        ];
+
+    }else if(type === "education"){
+
+        results = [
+`📚 Student Creator
+🧠 Learning & sharing
+🎯 One step at a time`,
+
+`📖 Education Content
+🧠 Learn | Improve | Grow
+🚀 Building every day`
+        ];
+
+    }else if(type === "travel"){
+
+        results = [
+`🌍 Travel Creator
+📸 Exploring new places
+✈️ Collecting memories`,
+
+`🌎 Travel | Adventure | Memories
+📸 One destination at a time
+✈️ Keep exploring`
+        ];
+
+    }else{
+
+        results = [
+`✨ ${topic} Creator
+🚀 Creating something every day
+📩 Open for collaborations`,
+
+`🔥 ${topic}
+💡 Creating. Learning. Growing.
+🚀 Follow the journey`,
+
+`🎯 ${topic} Creator
+⚡ Turning ideas into content
+📩 DM for collaborations`,
+
+`🚀 Content Creator
+✨ Creating around ${topic}
+🔥 More coming soon`
+        ];
     }
 
-  }
-
-
-  /* SUCCESS HASHTAGS */
-
-  if (intent === "success") {
-
-    hashtags.push(
-      "#Success",
-      "#Achievement",
-      "#Winning",
-      "#Milestone"
+    renderResults(
+        "bioResults",
+        shuffle(unique(results)).slice(0,4)
     );
-
-  }
-
-
-  /* ACTUAL USER WORDS */
-
-  const stopWords = new Set([
-
-    "the",
-    "a",
-    "an",
-    "and",
-    "or",
-    "is",
-    "was",
-    "were",
-    "to",
-    "of",
-    "in",
-    "on",
-    "for",
-    "with",
-    "my",
-    "this",
-    "that",
-    "i",
-    "it",
-    "me",
-    "you",
-    "your",
-    "our",
-    "we",
-    "just",
-    "very",
-    "really",
-    "about",
-    "from",
-    "into",
-    "how",
-    "why",
-    "what",
-    "when"
-  ]);
-
-
-  const words =
-    normalize(input)
-      .split(" ")
-      .filter(word =>
-        word.length >= 4 &&
-        !stopWords.has(word) &&
-        !/^\d+$/.test(word)
-      );
-
-
-  words.slice(0, 5).forEach(word => {
-
-    const clean =
-      word.replace(/[^a-z0-9]/gi, "");
-
-    if (clean.length >= 4) {
-
-      const tag =
-        "#" +
-        clean.charAt(0).toUpperCase() +
-        clean.slice(1);
-
-      hashtags.push(tag);
-
-    }
-
-  });
-
-
-  hashtags = unique(hashtags);
-
-  hashtags = shuffle(hashtags).slice(0, 15);
-
-
-  const output = hashtags.join(" ");
-
-  renderResults(
-    "hashtagResults",
-    [output]
-  );
-
 }
 
 
-/* =========================================================
-   END OF VIRALFORGE
-   ========================================================= */
+function generateHashtags(){
+
+    const input = document.getElementById("hashtagInput").value;
+
+    if(!input.trim()){
+        renderResults("hashtagResults",["Enter a topic first."]);
+        return;
+    }
+
+    const t = normalize(input);
+
+    const sets = {
+
+        bike:[
+            "#bike","#bikelife","#biker","#bikerlife",
+            "#motorcycle","#riding","#ride","#cycling",
+            "#bikelovers","#twowheels","#bikevideo",
+            "#bikecontent","#rider","#motovlog","#bikeedit"
+        ],
+
+        football:[
+            "#football","#soccer","#footballreels",
+            "#footballvideo","#footballfans","#footballskills",
+            "#footballcontent","#goal","#matchday","#fifa",
+            "#premierleague","#footballclips","#footballer",
+            "#sports","#footballlife"
+        ],
+
+        cricket:[
+            "#cricket","#cricketreels","#cricketvideo",
+            "#cricketfans","#cricketlover","#cricketcontent",
+            "#cricketedit","#ipl","#wicket","#six",
+            "#batting","#bowling","#cricketclips",
+            "#sports","#cricketlife"
+        ],
+
+        basketball:[
+            "#basketball","#nba","#basketballreels",
+            "#basketballvideo","#basketballfans","#dunk",
+            "#hoops","#basketballlife","#basketballclips",
+            "#nbaedit","#ballislife","#sports",
+            "#basketballcontent"
+        ],
+
+        marvel:[
+            "#marvel","#marvelstudios","#marveledit",
+            "#marveledits","#marvelfans","#avengers",
+            "#ironman","#spiderman","#thor","#hulk",
+            "#captainamerica","#deadpool","#marvelreels",
+            "#marvelcontent","#mcu"
+        ],
+
+        gaming:[
+            "#gaming","#gamer","#gamingreels","#gamingvideo",
+            "#gamingcontent","#gameplay","#gamingcommunity",
+            "#gamers","#gamingclips","#videogames",
+            "#gaminglife","#gamelife","#gamingedit",
+            "#gamingmemes","#playgames"
+        ],
+
+        editing:[
+            "#videoediting","#videoeditor","#editor","#editing",
+            "#edit","#editingtips","#editingreels","#videoedit",
+            "#editorlife","#aftereffects","#premierepro",
+            "#alightmotion","#capcut","#davinciresolve",
+            "#creativeediting"
+        ],
+
+        anime:[
+            "#anime","#animeedit","#animeedits","#animeclips",
+            "#animefans","#animereels","#naruto","#onepiece",
+            "#dragonball","#goku","#gojo","#jujutsukaisen",
+            "#demonslayer","#animecontent","#otaku"
+        ],
+
+        education:[
+            "#education","#study","#student","#studytips",
+            "#studygram","#studymotivation","#examprep",
+            "#learning","#school","#students","#studyreels",
+            "#science","#math","#biology","#neet"
+        ],
+
+        travel:[
+            "#travel","#travelreels","#travelgram",
+            "#travelvideo","#travelcontent","#wanderlust",
+            "#adventure","#vacation","#trip","#explore",
+            "#nature","#travelphotography","#travelling",
+            "#journey","#exploring"
+        ],
+
+        food:[
+            "#food","#foodie","#foodreels","#foodvideo",
+            "#foodlover","#foodcontent","#cooking","#recipe",
+            "#foodphotography","#homemade","#delicious",
+            "#yummy","#foodblogger","#streetfood","#instafood"
+        ],
+
+        cars:[
+            "#cars","#car","#carreels","#carvideo","#carlover",
+            "#carscene","#supercars","#carsofinstagram",
+            "#automotive","#driving","#bmw","#mercedes",
+            "#lamborghini","#ferrari","#porsche"
+        ],
+
+        creator:[
+            "#contentcreator","#creator","#creatoreconomy",
+            "#contentcreation","#instagramcreator",
+            "#youtubecreator","#reelscreator","#shortscreator",
+            "#socialmedia","#creatorlife","#digitalcreator",
+            "#creatortips","#contenttips","#reels","#shorts"
+        ],
+
+        general:[
+            "#viral","#trending","#reels","#explore","#fyp",
+            "#viralreels","#trendingreels","#content",
+            "#creator","#socialmedia","#instagram","#video",
+            "#explorepage","#reelitfeelit","#newpost"
+        ]
+    };
+
+    const type = detectTopic(input);
+
+    let tags = [
+        ...(sets[type] || sets.general)
+    ];
+
+    if(hasAny(t,[
+        "fell","fallen","fall","crash",
+        "crashed","accident","broken","broke"
+    ])){
+
+        tags.push(
+            "#fail",
+            "#failvideo",
+            "#unexpected",
+            "#oops",
+            "#unexpectedmoment"
+        );
+    }
+
+    if(hasAny(t,[
+        "win","won","victory","champion",
+        "goal","success","achievement","milestone"
+    ])){
+
+        tags.push(
+            "#success",
+            "#winning",
+            "#winner",
+            "#achievement",
+            "#motivation"
+        );
+    }
+
+    const stopWords = new Set([
+        "the","a","an","and","or","is","are","was",
+        "were","my","me","i","this","that","to","of",
+        "in","on","for","with","from","it","its",
+        "today","video","post","new"
+    ]);
+
+    const words = t
+        .replace(/[^a-z0-9\s-]/g," ")
+        .split(/\s+/)
+        .filter(word =>
+            word.length > 2 &&
+            !stopWords.has(word)
+        );
+
+    unique(words).slice(0,5).forEach(word => {
+
+        const clean = word.replace(/-/g,"");
+
+        if(clean.length > 2){
+            tags.push("#" + clean);
+        }
+    });
+
+    tags = shuffle(unique(tags));
+
+    renderResults(
+        "hashtagResults",
+        [tags.slice(0,15).join(" ")]
+    );
+}
 
 </script>
 
