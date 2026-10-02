@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fsw12467.github.io/ViralForge/sitemap.xml
