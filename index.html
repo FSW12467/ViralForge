@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>ViralForge — Free Creator Tools</title>
-  <meta name="description" content="ViralForge gives creators free tools for captions, hooks, titles, bios and hashtags.">
+  <meta name="description" content="Free creator tools for captions, hooks, titles, bios and hashtags.">
 
   <style>
     * {
@@ -69,21 +69,20 @@
     }
 
     .tool h2 {
-      margin-bottom: 10px;
-      font-size: 21px;
       text-align: center;
+      margin-bottom: 10px;
     }
 
     .tool p {
       color: #999;
-      margin-bottom: 18px;
       text-align: center;
+      margin-bottom: 18px;
     }
 
     input,
     select {
       width: 100%;
-      padding: 12px;
+      padding: 13px;
       margin: 7px 0;
       border-radius: 10px;
       border: 1px solid #333;
@@ -93,15 +92,15 @@
     }
 
     button {
-      border: none;
-      padding: 12px 18px;
+      width: 100%;
+      padding: 12px;
       margin-top: 8px;
+      border: none;
       border-radius: 10px;
       background: white;
       color: black;
       font-weight: bold;
       cursor: pointer;
-      width: 100%;
     }
 
     button:hover {
@@ -110,16 +109,22 @@
 
     .result {
       margin-top: 16px;
-      padding: 14px;
-      background: #0b0b12;
-      border-radius: 10px;
-      color: #ddd;
-      line-height: 1.6;
-      white-space: pre-wrap;
     }
 
-    .copy {
-      display: none;
+    .result-card {
+      background: #0b0b12;
+      border: 1px solid #29293a;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      width: auto;
+      padding: 9px 14px;
+      font-size: 13px;
     }
 
     footer {
@@ -155,12 +160,12 @@
 
 <section class="tools">
 
-  <!-- CAPTION GENERATOR -->
+  <!-- CAPTION -->
   <div class="tool">
     <h2>📝 Caption Generator</h2>
-    <p>Create captions for your social media posts.</p>
+    <p>Create natural captions from your topic.</p>
 
-    <input id="captionTopic" placeholder="Enter your topic...">
+    <input id="captionTopic" placeholder="Example: YouTube subscribers">
 
     <select id="captionStyle">
       <option value="Cinematic">🎬 Cinematic</option>
@@ -172,225 +177,451 @@
     <button onclick="generateCaption()">Generate Caption</button>
 
     <div id="captionResult" class="result"></div>
-
-    <button id="copyCaption" class="copy" onclick="copyText('captionResult','copyCaption')">
-      📋 Copy Caption
-    </button>
   </div>
 
 
-  <!-- HOOK GENERATOR -->
+  <!-- HOOK -->
   <div class="tool">
     <h2>🎯 Hook Generator</h2>
-    <p>Create attention-grabbing hooks for your videos.</p>
+    <p>Create attention-grabbing hooks.</p>
 
-    <input id="hookTopic" placeholder="Enter your topic...">
+    <input id="hookTopic" placeholder="Example: YouTube subscribers">
 
-    <button onclick="generateHook()">Generate Hook</button>
+    <button onclick="generateHook()">Generate Hooks</button>
 
     <div id="hookResult" class="result"></div>
-
-    <button id="copyHook" class="copy" onclick="copyText('hookResult','copyHook')">
-      📋 Copy Hook
-    </button>
   </div>
 
 
-  <!-- TITLE GENERATOR -->
+  <!-- TITLES -->
   <div class="tool">
     <h2>▶️ YouTube Title Generator</h2>
-    <p>Generate catchy YouTube title ideas.</p>
+    <p>Generate individual title ideas.</p>
 
-    <input id="titleTopic" placeholder="Enter your video topic...">
+    <input id="titleTopic" placeholder="Example: YouTube subscribers">
 
     <button onclick="generateTitle()">Generate Titles</button>
 
     <div id="titleResult" class="result"></div>
-
-    <button id="copyTitle" class="copy" onclick="copyText('titleResult','copyTitle')">
-      📋 Copy Titles
-    </button>
   </div>
 
 
-  <!-- BIO GENERATOR -->
+  <!-- BIO -->
   <div class="tool">
     <h2>✨ Bio Generator</h2>
-    <p>Create a clean and memorable creator bio.</p>
+    <p>Create a clean creator bio.</p>
 
     <input id="bioTopic" placeholder="Example: Video Editor">
 
     <button onclick="generateBio()">Generate Bio</button>
 
     <div id="bioResult" class="result"></div>
-
-    <button id="copyBio" class="copy" onclick="copyText('bioResult','copyBio')">
-      📋 Copy Bio
-    </button>
   </div>
 
 
-  <!-- HASHTAG GENERATOR -->
+  <!-- HASHTAGS -->
   <div class="tool">
     <h2>#️⃣ Hashtag Generator</h2>
-    <p>Generate hashtag ideas for your content.</p>
+    <p>Generate relevant hashtag ideas.</p>
 
-    <input id="hashtagTopic" placeholder="Enter your topic...">
+    <input id="hashtagTopic" placeholder="Example: YouTube growth">
 
     <button onclick="generateHashtags()">Generate Hashtags</button>
 
     <div id="hashtagResult" class="result"></div>
-
-    <button id="copyHashtags" class="copy" onclick="copyText('hashtagResult','copyHashtags')">
-      📋 Copy Hashtags
-    </button>
   </div>
 
 </section>
 
 <footer>
-  © 2026 Viral
+  © 2026 ViralForge · Free Creator Tools
+</footer>
+
+
 <script>
+
+function getTopicContext(topic) {
+
+  const t = topic.toLowerCase();
+
+  if (
+    t.includes("youtube") ||
+    t.includes("yt") ||
+    t.includes("subscriber") ||
+    t.includes("subscribers") ||
+    t.includes("channel")
+  ) {
+    return {
+      subject: "YouTube growth",
+      phrase: "growing your YouTube channel",
+      audience: "YouTube creators"
+    };
+  }
+
+  if (
+    t.includes("instagram") ||
+    t.includes("followers") ||
+    t.includes("reels")
+  ) {
+    return {
+      subject: "Instagram growth",
+      phrase: "growing on Instagram",
+      audience: "creators"
+    };
+  }
+
+  if (
+    t.includes("editing") ||
+    t.includes("video editor") ||
+    t.includes("video editing")
+  ) {
+    return {
+      subject: "video editing",
+      phrase: "creating better edits",
+      audience: "video editors"
+    };
+  }
+
+  if (
+    t.includes("marvel") ||
+    t.includes("avengers") ||
+    t.includes("spiderman") ||
+    t.includes("spider-man")
+  ) {
+    return {
+      subject: "Marvel edits",
+      phrase: "making Marvel edits",
+      audience: "Marvel fans"
+    };
+  }
+
+  return {
+    subject: topic,
+    phrase: topic,
+    audience: "creators"
+  };
+}
+
+
+/* CAPTION GENERATOR */
+
 function generateCaption() {
+
   const topic = document.getElementById("captionTopic").value.trim();
   const style = document.getElementById("captionStyle").value;
   const result = document.getElementById("captionResult");
 
   if (!topic) {
-    result.innerText = "⚠️ Enter a topic first.";
+    result.innerHTML = `<div class="result-card">⚠️ Enter a topic first.</div>`;
     return;
   }
 
-  const captions = {
-    Cinematic: [
-      `A moment worth remembering. 🎬 ${topic}`,
-      `Some moments don't need an explanation — ${topic}. ✨`,
-      `Just a little cinematic energy around ${topic}. 🎞️`
-    ],
-    Funny: [
-      `POV: You thought ${topic} would go normally. 😂`,
-      `${topic} really said: Let's make this interesting. 💀`,
-      `Nobody: Absolutely nobody: Me with ${topic}: 😂`
-    ],
-    Emotional: [
-      `Some moments stay with you forever. ❤️ ${topic}`,
-      `More than just a moment — it's a memory. ✨ ${topic}`,
-      `You had to be there to understand ${topic}. ❤️`
-    ],
-    Professional: [
-      `Creating something meaningful around ${topic}. ✨`,
-      `Focused on the process. Inspired by ${topic}.`,
-      `Turning ideas into content — ${topic}. 🚀`
-    ]
-  };
+  const c = getTopicContext(topic);
 
-  const options = captions[style];
-  result.innerText = options[Math.floor(Math.random() * options.length)];
-  document.getElementById("copyCaption").style.display = "block";
+  let captions = [];
+
+  if (style === "Cinematic") {
+
+    captions = [
+      `Some moments change everything. 🎬 This one is about ${c.phrase}.`,
+      `Not just content. A moment worth remembering. ✨`,
+      `Every creator has a story. This is another chapter in ${c.subject}.`
+    ];
+
+  } else if (style === "Funny") {
+
+    captions = [
+      `POV: You said you were done with ${c.subject}... and started again 5 minutes later. 😂`,
+      `Me pretending I know exactly what I'm doing with ${c.subject}. 💀`,
+      `${c.subject} really knows how to consume all my free time. 😂`
+    ];
+
+  } else if (style === "Emotional") {
+
+    captions = [
+      `Started with an idea. Stayed for the journey. ❤️`,
+      `Some goals take time, but every step counts. ✨`,
+      `One day you'll look back and realize how far you've come. ❤️`
+    ];
+
+  } else {
+
+    captions = [
+      `Focused on creating better content and improving every day. 🚀`,
+      `Turning ideas into content, one project at a time.`,
+      `Consistency, creativity and better content. That's the goal. ✨`
+    ];
+  }
+
+  let html = "";
+
+  captions.forEach((caption, index) => {
+    html += `
+      <div class="result-card">
+        ${caption}
+        <br>
+        <button class="copy-btn" onclick="copyValue(this, \`${caption.replace(/`/g, "\\`")}\`)">
+          📋 Copy
+        </button>
+      </div>
+    `;
+  });
+
+  result.innerHTML = html;
 }
 
 
+/* HOOK GENERATOR */
+
 function generateHook() {
+
   const topic = document.getElementById("hookTopic").value.trim();
   const result = document.getElementById("hookResult");
 
   if (!topic) {
-    result.innerText = "⚠️ Enter a topic first.";
+    result.innerHTML = `<div class="result-card">⚠️ Enter a topic first.</div>`;
     return;
   }
 
+  const c = getTopicContext(topic);
+
   const hooks = [
-    `Nobody talks about this side of ${topic}...`,
-    `You won't believe what happened with ${topic} 👀`,
-    `This completely changes how you see ${topic}.`,
-    `Wait until you see what happens with ${topic}...`,
-    `Here's something about ${topic} that most people don't know.`,
-    `The truth about ${topic} nobody tells you.`,
-    `If you like ${topic}, you NEED to see this.`,
-    `Stop scrolling — you need to see this ${topic} edit.`
+
+    `If you're serious about ${c.phrase}, stop doing this...`,
+    `Nobody tells creators this about ${c.subject}.`,
+    `Want to know what's actually stopping your growth?`,
+    `You're probably doing ${c.subject} wrong — here's why.`,
+    `Before you post another video, watch this.`,
+    `This one mistake could be holding your content back.`,
+    `If I had to start ${c.phrase} again, I'd do this first.`,
+    `Here's what I wish I knew before starting ${c.subject}.`
+
   ];
 
-  result.innerText = hooks[Math.floor(Math.random() * hooks.length)];
-  document.getElementById("copyHook").style.display = "block";
+  let html = "";
+
+  hooks.forEach(hook => {
+
+    html += `
+      <div class="result-card">
+        ${hook}
+        <br>
+        <button class="copy-btn" onclick="copyValue(this, \`${hook}\`)">
+          📋 Copy
+        </button>
+      </div>
+    `;
+
+  });
+
+  result.innerHTML = html;
 }
 
 
+/* TITLE GENERATOR */
+
 function generateTitle() {
+
   const topic = document.getElementById("titleTopic").value.trim();
   const result = document.getElementById("titleResult");
 
   if (!topic) {
-    result.innerText = "⚠️ Enter a topic first.";
+    result.innerHTML = `<div class="result-card">⚠️ Enter a topic first.</div>`;
     return;
   }
 
+  const c = getTopicContext(topic);
+
   const titles = [
-    `The Truth About ${topic}`,
-    `I Tried ${topic}... Here's What Happened`,
-    `You Need to See This ${topic}`,
-    `${topic} Explained in Minutes`,
-    `What Nobody Tells You About ${topic}`,
-    `I Didn't Expect This From ${topic}`,
-    `The Ultimate Guide to ${topic}`
+
+    `How to Grow Your YouTube Channel Faster`,
+    `7 Mistakes Killing Your YouTube Growth`,
+    `What Nobody Tells You About YouTube Growth`,
+    `I Tried This YouTube Growth Strategy`,
+    `How I Would Start a YouTube Channel Today`,
+    `The Truth About Getting More Subscribers`,
+    `Stop Doing This If You Want More Subscribers`
+
   ];
 
-  result.innerText = titles.join("\n\n");
-  document.getElementById("copyTitle").style.display = "block";
+  if (c.subject !== "YouTube growth") {
+
+    titles[0] = `The Ultimate Guide to ${c.subject}`;
+    titles[1] = `7 Mistakes People Make With ${c.subject}`;
+    titles[2] = `What Nobody Tells You About ${c.subject}`;
+    titles[3] = `I Tried ${c.subject} — Here's What Happened`;
+    titles[4] = `How to Get Better at ${c.subject}`;
+    titles[5] = `The Truth About ${c.subject}`;
+    titles[6] = `Stop Doing This With ${c.subject}`;
+
+  }
+
+  let html = "";
+
+  titles.forEach(title => {
+
+    html += `
+      <div class="result-card">
+        ${title}
+        <br>
+        <button class="copy-btn" onclick="copyValue(this, \`${title}\`)">
+          📋 Copy
+        </button>
+      </div>
+    `;
+
+  });
+
+  result.innerHTML = html;
 }
 
 
+/* BIO GENERATOR */
+
 function generateBio() {
+
   const topic = document.getElementById("bioTopic").value.trim();
   const result = document.getElementById("bioResult");
 
   if (!topic) {
-    result.innerText = "⚠️ Enter what you create.";
+    result.innerHTML = `<div class="result-card">⚠️ Enter what you create.</div>`;
     return;
   }
 
+  const c = getTopicContext(topic);
+
   const bios = [
-    `🎬 ${topic}\n✨ Creating. Editing. Improving.\n🚀 Turning ideas into content.`,
-    `🎥 ${topic}\n⚡ Creating content that stands out.\n📩 Let's create something.`,
-    `✨ ${topic}\n🎬 Passion → Creativity → Content\n🚀 Building one post at a time.`
+
+    `🎬 ${c.subject}
+✨ Creating content that stands out
+🚀 Improving every day`,
+
+    `🎥 ${c.subject}
+⚡ Turning ideas into content
+📩 Open to creative projects`,
+
+    `✨ ${c.subject}
+🎬 Create • Edit • Improve
+🚀 Building something bigger`
+
   ];
 
-  result.innerText = bios[Math.floor(Math.random() * bios.length)];
-  document.getElementById("copyBio").style.display = "block";
+  let html = "";
+
+  bios.forEach(bio => {
+
+    html += `
+      <div class="result-card">
+        ${bio.replace(/\n/g, "<br>")}
+        <br>
+        <button class="copy-btn" onclick="copyValue(this, \`${bio}\`)">
+          📋 Copy
+        </button>
+      </div>
+    `;
+
+  });
+
+  result.innerHTML = html;
 }
 
 
+/* HASHTAG GENERATOR */
+
 function generateHashtags() {
+
   const topic = document.getElementById("hashtagTopic").value.trim();
   const result = document.getElementById("hashtagResult");
 
   if (!topic) {
-    result.innerText = "⚠️ Enter a topic first.";
+    result.innerHTML = `<div class="result-card">⚠️ Enter a topic first.</div>`;
     return;
   }
 
-  const cleanTopic = topic.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  const t = topic.toLowerCase();
 
-  result.innerText =
-    `#${cleanTopic} #contentcreator #creator #contentcreation #reels #shorts #viral #trending #explore #fyp #creative #socialmedia`;
+  let hashtags = [];
 
-  document.getElementById("copyHashtags").style.display = "block";
-}
+  if (
+    t.includes("youtube") ||
+    t.includes("subscriber") ||
+    t.includes("channel") ||
+    t.includes("yt")
+  ) {
 
+    hashtags = [
+      "#youtube",
+      "#youtubegrowth",
+      "#youtubecreator",
+      "#youtubetips",
+      "#subscribers",
+      "#contentcreator",
+      "#creator",
+      "#contentcreation",
+      "#shorts",
+      "#viral"
+    ];
 
-function copyText(resultId, buttonId) {
-  const text = document.getElementById(resultId).innerText;
-  const button = document.getElementById(buttonId);
+  } else if (
+    t.includes("instagram") ||
+    t.includes("followers") ||
+    t.includes("reels")
+  ) {
 
-  navigator.clipboard.writeText(text).then(() => {
-    const original = button.innerText;
-    button.innerText = "✅ Copied!";
+    hashtags = [
+      "#instagram",
+      "#instagramgrowth",
+      "#reels",
+      "#reelscreator",
+      "#contentcreator",
+      "#creator",
+      "#viralreels",
+      "#explore",
+      "#trending",
+      "#socialmedia"
+    ];
 
-    setTimeout(() => {
-      button.innerText = original;
-    }, 1500);
-  });
-}
-</script>
+  } else if (
+    t.includes("editing") ||
+    t.includes("editor")
+  ) {
 
-</body>
-</html>
+    hashtags = [
+      "#videoediting",
+      "#videoeditor",
+      "#editor",
+      "#editing",
+      "#editingtips",
+      "#aftereffects",
+      "#premierepro",
+      "#creative",
+      "#contentcreator",
+      "#reels"
+    ];
+
+  } else {
+
+    hashtags = [
+      `#${topic.replace(/[^a-zA-Z0-9]/g, "").toLowerCase()}`,
+      "#contentcreator",
+      "#creator",
+      "#contentcreation",
+      "#creative",
+      "#reels",
+      "#shorts",
+      "#viral",
+      "#trending",
+      "#explore"
+    ];
+
+  }
+
+  const text = hashtags.join(" ");
+
+  result.innerHTML = `
+    <div class="result-card">
+      ${text}
+      <br>
+      <button class="copy-btn" onclick="copyValue(this, \`${text}\`)">
+        📋 Copy Hashtags
+</button>
