@@ -117,11 +117,42 @@
   <section class="tools">
 
     <div class="tool">
-      <h2>📝 Caption Generator</h2>
-      <p>Create captions for your social media posts.</p>
-      <button onclick="alert('Caption Generator coming soon!')">
-        Open Tool
-      </button>
+  <h2>📝 Caption Generator</h2>
+  <p>Create captions for your social media posts.</p>
+
+  <input
+    type="text"
+    id="captionTopic"
+    placeholder="Enter your topic..."
+    style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #333; background:#0b0b12; color:white;"
+  >
+
+  <select
+    id="captionStyle"
+    style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #333; background:#0b0b12; color:white;"
+  >
+    <option value="Cinematic">🎬 Cinematic</option>
+    <option value="Funny">😂 Funny</option>
+    <option value="Emotional">❤️ Emotional</option>
+    <option value="Professional">💼 Professional</option>
+  </select>
+
+  <button onclick="generateCaption()">
+    Generate Caption
+  </button>
+
+  <div
+    id="captionResult"
+    style="margin-top:18px; color:#ddd; line-height:1.6;"
+  ></div>
+
+  <button
+    id="copyCaption"
+    onclick="copyCaptionText()"
+    style="display:none; margin-top:12px;"
+  >
+    📋 Copy Caption
+  </button>
     </div>
 
     <div class="tool">
