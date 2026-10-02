@@ -250,3 +250,147 @@
 
 <footer>
   © 2026 Viral
+<script>
+function generateCaption() {
+  const topic = document.getElementById("captionTopic").value.trim();
+  const style = document.getElementById("captionStyle").value;
+  const result = document.getElementById("captionResult");
+
+  if (!topic) {
+    result.innerText = "⚠️ Enter a topic first.";
+    return;
+  }
+
+  const captions = {
+    Cinematic: [
+      `A moment worth remembering. 🎬 ${topic}`,
+      `Some moments don't need an explanation — ${topic}. ✨`,
+      `Just a little cinematic energy around ${topic}. 🎞️`
+    ],
+    Funny: [
+      `POV: You thought ${topic} would go normally. 😂`,
+      `${topic} really said: Let's make this interesting. 💀`,
+      `Nobody: Absolutely nobody: Me with ${topic}: 😂`
+    ],
+    Emotional: [
+      `Some moments stay with you forever. ❤️ ${topic}`,
+      `More than just a moment — it's a memory. ✨ ${topic}`,
+      `You had to be there to understand ${topic}. ❤️`
+    ],
+    Professional: [
+      `Creating something meaningful around ${topic}. ✨`,
+      `Focused on the process. Inspired by ${topic}.`,
+      `Turning ideas into content — ${topic}. 🚀`
+    ]
+  };
+
+  const options = captions[style];
+  result.innerText = options[Math.floor(Math.random() * options.length)];
+  document.getElementById("copyCaption").style.display = "block";
+}
+
+
+function generateHook() {
+  const topic = document.getElementById("hookTopic").value.trim();
+  const result = document.getElementById("hookResult");
+
+  if (!topic) {
+    result.innerText = "⚠️ Enter a topic first.";
+    return;
+  }
+
+  const hooks = [
+    `Nobody talks about this side of ${topic}...`,
+    `You won't believe what happened with ${topic} 👀`,
+    `This completely changes how you see ${topic}.`,
+    `Wait until you see what happens with ${topic}...`,
+    `Here's something about ${topic} that most people don't know.`,
+    `The truth about ${topic} nobody tells you.`,
+    `If you like ${topic}, you NEED to see this.`,
+    `Stop scrolling — you need to see this ${topic} edit.`
+  ];
+
+  result.innerText = hooks[Math.floor(Math.random() * hooks.length)];
+  document.getElementById("copyHook").style.display = "block";
+}
+
+
+function generateTitle() {
+  const topic = document.getElementById("titleTopic").value.trim();
+  const result = document.getElementById("titleResult");
+
+  if (!topic) {
+    result.innerText = "⚠️ Enter a topic first.";
+    return;
+  }
+
+  const titles = [
+    `The Truth About ${topic}`,
+    `I Tried ${topic}... Here's What Happened`,
+    `You Need to See This ${topic}`,
+    `${topic} Explained in Minutes`,
+    `What Nobody Tells You About ${topic}`,
+    `I Didn't Expect This From ${topic}`,
+    `The Ultimate Guide to ${topic}`
+  ];
+
+  result.innerText = titles.join("\n\n");
+  document.getElementById("copyTitle").style.display = "block";
+}
+
+
+function generateBio() {
+  const topic = document.getElementById("bioTopic").value.trim();
+  const result = document.getElementById("bioResult");
+
+  if (!topic) {
+    result.innerText = "⚠️ Enter what you create.";
+    return;
+  }
+
+  const bios = [
+    `🎬 ${topic}\n✨ Creating. Editing. Improving.\n🚀 Turning ideas into content.`,
+    `🎥 ${topic}\n⚡ Creating content that stands out.\n📩 Let's create something.`,
+    `✨ ${topic}\n🎬 Passion → Creativity → Content\n🚀 Building one post at a time.`
+  ];
+
+  result.innerText = bios[Math.floor(Math.random() * bios.length)];
+  document.getElementById("copyBio").style.display = "block";
+}
+
+
+function generateHashtags() {
+  const topic = document.getElementById("hashtagTopic").value.trim();
+  const result = document.getElementById("hashtagResult");
+
+  if (!topic) {
+    result.innerText = "⚠️ Enter a topic first.";
+    return;
+  }
+
+  const cleanTopic = topic.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+  result.innerText =
+    `#${cleanTopic} #contentcreator #creator #contentcreation #reels #shorts #viral #trending #explore #fyp #creative #socialmedia`;
+
+  document.getElementById("copyHashtags").style.display = "block";
+}
+
+
+function copyText(resultId, buttonId) {
+  const text = document.getElementById(resultId).innerText;
+  const button = document.getElementById(buttonId);
+
+  navigator.clipboard.writeText(text).then(() => {
+    const original = button.innerText;
+    button.innerText = "✅ Copied!";
+
+    setTimeout(() => {
+      button.innerText = original;
+    }, 1500);
+  });
+}
+</script>
+
+</body>
+</html>
