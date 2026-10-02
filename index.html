@@ -637,4 +637,85 @@ document.getElementById("hashtagButton").addEventListener("click", function() {
       "#footballreels",
       "#footballfans",
       "#footballvideo",
-      "#
+      "#sports",
+"#goals",
+"#footballskills"
+];
+
+} else if (
+t.includes("marvel") ||
+t.includes("avengers")
+) {
+
+hashtags = [
+"#marvel",
+"#marveledits",
+"#avengers",
+"#marvelfans",
+"#marvelstudios",
+"#superhero",
+"#fanedit",
+"#edit"
+];
+
+} else if (
+t.includes("youtube") ||
+t.includes("subscriber") ||
+t.includes("channel")
+) {
+
+hashtags = [
+"#youtube",
+"#youtubegrowth",
+"#youtubecreator",
+"#youtubetips",
+"#subscribers",
+"#contentcreator",
+"#creator",
+"#youtubecommunity"
+];
+
+} else {
+
+var clean = topic
+.replace(/[^a-zA-Z0-9]/g, "")
+.toLowerCase();
+
+hashtags = [
+"#" + clean,
+"#contentcreator",
+"#creator",
+"#contentcreation",
+"#creative",
+"#reels",
+"#shorts",
+"#trending",
+"#viral",
+"#explore"
+];
+
+}
+
+var text = hashtags.join(" ");
+
+result.innerHTML =
+'<div class="result-card">' +
+text +
+'<br>' +
+'<button id="copyHashtagButton" class="copy-btn">📋 Copy Hashtags</button>' +
+'</div>';
+
+document
+.getElementById("copyHashtagButton")
+.addEventListener("click", function() {
+
+copyText(text, this);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
