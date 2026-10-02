@@ -125,11 +125,24 @@
     </div>
 
     <div class="tool">
-      <h2>🎯 Hook Generator</h2>
-      <p>Create attention-grabbing hooks for your videos.</p>
-      <button onclick="alert('Hook Generator coming soon!')">
-        Open Tool
-      </button>
+  <h2>🎯 Hook Generator</h2>
+  <p>Create attention-grabbing hooks for your videos.</p>
+
+  <input
+    type="text"
+    id="hookTopic"
+    placeholder="Enter your topic..."
+    style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #333; background:#0b0b12; color:white;"
+  >
+
+  <button onclick="generateHook()">
+    Generate Hook
+  </button>
+
+  <div
+    id="hookResult"
+    style="margin-top:18px; color:#ddd; line-height:1.6;"
+  ></div>
     </div>
 
     <div class="tool">
@@ -161,6 +174,35 @@
   <footer>
     © 2026 ViralForge · Free Creator Tools
   </footer>
+  <script>
+function generateHook() {
+  const topic = document.getElementById("hookTopic").value.trim();
+  const result = document.getElementById("hookResult");
+
+  if (!topic) {
+    result.innerHTML = "⚠️ Enter a topic first.";
+    return;
+  }
+
+  const hooks = [
+    `Nobody talks about this side of ${topic}...`,
+    `You won't believe what happened with ${topic} 👀`,
+    `This completely changes how you see ${topic}.`,
+    `Wait until you see what happens with ${topic}...`,
+    `Here's something about ${topic} that most people don't know.`,
+    `I didn't expect ${topic} to turn out like this.`,
+    `The truth about ${topic} nobody tells you.`,
+    `If you like ${topic}, you NEED to see this.`,
+    `This ${topic} moment deserves way more attention.`,
+    `Stop scrolling — you need to see this ${topic} edit.`
+  ];
+
+  const randomHook =
+    hooks[Math.floor(Math.random() * hooks.length)];
+
+  result.innerHTML = `<strong>Your hook:</strong><br>${randomHook}`;
+}
+  </script>
 
 </body>
 </html>
