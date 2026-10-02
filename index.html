@@ -783,13 +783,9 @@ function detectIntent(text){
 
     return "general";
 }
-    <script>
+    function generateCaptions(){
 
-function generateCaptions(){
-
-    const input=cleanTopic(
-        document.getElementById("captionInput").value
-    );
+    const input = cleanTopic(document.getElementById("captionInput").value);
 
     if(!input){
         renderResults("captionResults",[
@@ -798,26 +794,25 @@ function generateCaptions(){
         return;
     }
 
-    const topic=detectTopic(input);
-    const intent=detectIntent(input);
+    const topic = detectTopic(input);
+    const intent = detectIntent(input);
+    let results = [];
 
-    let results=[];
+    if(topic === "bike" && intent === "incident"){
 
-    if(topic==="bike" && intent==="incident"){
-
-        results=[
+        results = [
             `POV: ${input} and everything went wrong 😭`,
             `That was NOT how I planned it 💀`,
-            `${input}... yeah, that hurt the ego 😂`,
+            `${input}... yeah, that happened 😂`,
             `One moment everything was fine. Then this happened.`,
             `Adding this one to the "never again" folder 😭`,
             `Bro really thought today was going to be normal 💀`
         ];
 
-    }else if(topic==="marvel"){
+    }else if(topic === "marvel"){
 
-        results=[
-            `Some moments just hit different. ⚡`,
+        results = [
+            `Some Marvel moments just hit different. ⚡`,
             `This Marvel moment deserves another watch.`,
             `The aura in this scene is unreal.`,
             `One edit. One character. Unlimited aura. 🔥`,
@@ -825,9 +820,9 @@ function generateCaptions(){
             `This scene was made for an edit.`
         ];
 
-    }else if(topic==="gaming"){
+    }else if(topic === "gaming"){
 
-        results=[
+        results = [
             `The grind finally paid off 🎮`,
             `That moment when everything goes exactly right.`,
             `One game. One crazy moment. 🔥`,
@@ -836,9 +831,9 @@ function generateCaptions(){
             `Definitely saving this one. 🎮`
         ];
 
-    }else if(topic==="editing"){
+    }else if(topic === "editing"){
 
-        results=[
+        results = [
             `Built this one from scratch. 🎬`,
             `Another edit done. Another idea brought to life.`,
             `Small details make a big difference.`,
@@ -847,9 +842,9 @@ function generateCaptions(){
             `Edit finished. Now we move to the next one.`
         ];
 
-    }else if(intent==="success"){
+    }else if(intent === "success"){
 
-        results=[
+        results = [
             `${input} — and we actually did it. 🔥`,
             `Hard work finally showing up.`,
             `From trying to making it happen.`,
@@ -858,9 +853,9 @@ function generateCaptions(){
             `Started with an idea. Ended with this.`
         ];
 
-    }else if(intent==="funny"){
+    }else if(intent === "funny"){
 
-        results=[
+        results = [
             `${input} was definitely not part of the plan 😂`,
             `I can't even explain this one 💀`,
             `Yeah... that happened.`,
@@ -871,7 +866,7 @@ function generateCaptions(){
 
     }else{
 
-        results=[
+        results = [
             `${input} — here's the moment.`,
             `A little moment worth sharing.`,
             `Sometimes the simplest moments make the best posts.`,
@@ -881,15 +876,16 @@ function generateCaptions(){
         ];
     }
 
-    renderResults("captionResults",shuffle(unique(results)).slice(0,6));
+    renderResults(
+        "captionResults",
+        shuffle(unique(results)).slice(0,6)
+    );
 }
 
 
 function generateHooks(){
 
-    const input=cleanTopic(
-        document.getElementById("hookInput").value
-    );
+    const input = cleanTopic(document.getElementById("hookInput").value);
 
     if(!input){
         renderResults("hookResults",[
@@ -898,14 +894,13 @@ function generateHooks(){
         return;
     }
 
-    const topic=detectTopic(input);
-    const intent=detectIntent(input);
+    const topic = detectTopic(input);
+    const intent = detectIntent(input);
+    let results = [];
 
-    let results=[];
+    if(topic === "marvel"){
 
-    if(topic==="marvel"){
-
-        results=[
+        results = [
             `You probably missed THIS in the Marvel scene...`,
             `Wait until you see what happens next.`,
             `This Marvel moment hits completely different.`,
@@ -914,9 +909,9 @@ function generateHooks(){
             `Watch the ending before judging this edit.`
         ];
 
-    }else if(topic==="gaming"){
+    }else if(topic === "gaming"){
 
-        results=[
+        results = [
             `I genuinely didn't expect this to happen...`,
             `Wait for the final play.`,
             `This went from normal to INSANE.`,
@@ -925,9 +920,9 @@ function generateHooks(){
             `The last few seconds are crazy.`
         ];
 
-    }else if(topic==="editing"){
+    }else if(topic === "editing"){
 
-        results=[
+        results = [
             `Here's what happens when the timing is perfect.`,
             `This edit took way longer than it looks.`,
             `The transition at the end changes everything.`,
@@ -936,9 +931,9 @@ function generateHooks(){
             `This is why timing matters.`
         ];
 
-    }else if(intent==="incident"){
+    }else if(intent === "incident"){
 
-        results=[
+        results = [
             `Everything was fine until THIS happened...`,
             `I really should've seen this coming.`,
             `This went wrong FAST.`,
@@ -947,9 +942,9 @@ function generateHooks(){
             `I wasn't expecting that at all.`
         ];
 
-    }else if(intent==="tutorial"){
+    }else if(intent === "tutorial"){
 
-        results=[
+        results = [
             `Here's the easiest way to do it.`,
             `Stop doing it the hard way.`,
             `Try this before you give up.`,
@@ -960,7 +955,7 @@ function generateHooks(){
 
     }else{
 
-        results=[
+        results = [
             `You need to see this.`,
             `Wait until you see the ending.`,
             `Nobody expected this.`,
@@ -970,15 +965,16 @@ function generateHooks(){
         ];
     }
 
-    renderResults("hookResults",shuffle(unique(results)).slice(0,5));
+    renderResults(
+        "hookResults",
+        shuffle(unique(results)).slice(0,5)
+    );
 }
 
 
 function generateTitles(){
 
-    const input=cleanTopic(
-        document.getElementById("titleInput").value
-    );
+    const input = cleanTopic(document.getElementById("titleInput").value);
 
     if(!input){
         renderResults("titleResults",[
@@ -987,14 +983,13 @@ function generateTitles(){
         return;
     }
 
-    const topic=detectTopic(input);
-    const intent=detectIntent(input);
+    const topic = detectTopic(input);
+    const intent = detectIntent(input);
+    let results = [];
 
-    let results=[];
+    if(topic === "gaming"){
 
-    if(topic==="gaming"){
-
-        results=[
+        results = [
             `${input} — This Got Crazy`,
             `I Tried ${input}... Here's What Happened`,
             `${input} Was NOT What I Expected`,
@@ -1002,9 +997,9 @@ function generateTitles(){
             `I Can't Believe This Happened in ${input}`
         ];
 
-    }else if(topic==="marvel"){
+    }else if(topic === "marvel"){
 
-        results=[
+        results = [
             `The Marvel Moment Everyone Missed`,
             `This Marvel Scene Hits Different`,
             `The Most Underrated Marvel Moment`,
@@ -1012,9 +1007,9 @@ function generateTitles(){
             `You Need to See This Marvel Scene`
         ];
 
-    }else if(topic==="editing"){
+    }else if(topic === "editing"){
 
-        results=[
+        results = [
             `How I Made This Edit`,
             `The Edit That Took Me Hours`,
             `Turning Raw Clips Into This`,
@@ -1022,9 +1017,9 @@ function generateTitles(){
             `The Final Result Was Worth It`
         ];
 
-    }else if(topic==="education"){
+    }else if(topic === "education"){
 
-        results=[
+        results = [
             `${input} Explained Simply`,
             `Everything You Need to Know About ${input}`,
             `${input} in the Easiest Way`,
@@ -1032,9 +1027,9 @@ function generateTitles(){
             `Don't Make These ${input} Mistakes`
         ];
 
-    }else if(intent==="tutorial"){
+    }else if(intent === "tutorial"){
 
-        results=[
+        results = [
             `How to ${input}`,
             `${input} Tutorial for Beginners`,
             `The Easiest Way to ${input}`,
@@ -1044,7 +1039,7 @@ function generateTitles(){
 
     }else{
 
-        results=[
+        results = [
             `${input} — Here's What Happened`,
             `I Tried ${input}...`,
             `Everything About ${input}`,
@@ -1053,15 +1048,16 @@ function generateTitles(){
         ];
     }
 
-    renderResults("titleResults",shuffle(unique(results)).slice(0,5));
+    renderResults(
+        "titleResults",
+        shuffle(unique(results)).slice(0,5)
+    );
 }
 
 
 function generateBios(){
 
-    const input=cleanTopic(
-        document.getElementById("bioInput").value
-    );
+    const input = cleanTopic(document.getElementById("bioInput").value);
 
     if(!input){
         renderResults("bioResults",[
@@ -1070,30 +1066,29 @@ function generateBios(){
         return;
     }
 
-    const topic=detectTopic(input);
+    const topic = detectTopic(input);
+    let results = [];
 
-    let results=[];
+    if(topic === "editing" || /editor/i.test(input)){
 
-    if(topic==="editing" || /editor/i.test(input)){
-
-        results=[
+        results = [
             `🎬 Video Editor\n⚡ Turning ideas into visuals\n📩 Open for work`,
             `🎥 Video Editor\n✨ Clean edits. Strong stories.\n📩 DM for projects`,
             `🎬 Editor & Creator\n🚀 Making content stand out\n📩 Let's work`,
             `Video Editor 🎬\nEdits • Motion • Creativity\n📩 Available for projects`
         ];
 
-    }else if(topic==="gaming"){
+    }else if(topic === "gaming"){
 
-        results=[
+        results = [
             `🎮 Gamer & Creator\n🔥 Gameplay • Clips • Content\n🚀 More coming`,
             `🎮 Gaming Content\n⚡ Clips & crazy moments\n📩 Collabs open`,
             `Gaming 🎮\nCreating. Playing. Repeating.\n🔥 Stay tuned`
         ];
 
-    }else if(topic==="creator"){
+    }else if(topic === "creator"){
 
-        results=[
+        results = [
             `🎥 Content Creator\n🚀 Creating something worth watching\n📩 Collabs open`,
             `Creator ✨\nIdeas → Content\n🔥 Building something different`,
             `🎬 Creator\n⚡ Content • Creativity • Consistency\n📩 Open for collabs`
@@ -1101,7 +1096,7 @@ function generateBios(){
 
     }else{
 
-        results=[
+        results = [
             `${input} ✨\nCreating • Sharing • Growing\n🚀 More coming`,
             `Passionate about ${input}.\n🔥 Creating something different.`,
             `${input} 🚀\nIdeas. Creativity. Consistency.`,
@@ -1109,15 +1104,16 @@ function generateBios(){
         ];
     }
 
-    renderResults("bioResults",shuffle(unique(results)).slice(0,4));
+    renderResults(
+        "bioResults",
+        shuffle(unique(results)).slice(0,4)
+    );
 }
 
 
 function generateHashtags(){
 
-    const input=cleanTopic(
-        document.getElementById("hashtagInput").value
-    );
+    const input = cleanTopic(document.getElementById("hashtagInput").value);
 
     if(!input){
         renderResults("hashtagResults",[
@@ -1126,10 +1122,10 @@ function generateHashtags(){
         return;
     }
 
-    const topic=detectTopic(input);
-    const intent=detectIntent(input);
+    const topic = detectTopic(input);
+    const intent = detectIntent(input);
 
-    const sets={
+    const sets = {
 
         marvel:[
             "#Marvel","#MarvelEdit","#MarvelFans",
@@ -1231,9 +1227,9 @@ function generateHashtags(){
         ]
     };
 
-    let tags=[...(sets[topic] || sets.general)];
+    let tags = [...(sets[topic] || sets.general)];
 
-    if(intent==="incident"){
+    if(intent === "incident"){
         tags.push(
             "#Unexpected",
             "#Fail",
@@ -1242,7 +1238,7 @@ function generateHashtags(){
         );
     }
 
-    if(intent==="success"){
+    if(intent === "success"){
         tags.push(
             "#Success",
             "#Achievement",
@@ -1251,22 +1247,26 @@ function generateHashtags(){
         );
     }
 
-    const words=normalize(input)
+    const words = normalize(input)
         .split(" ")
-        .filter(word=>word.length>2)
-        .filter(word=>![
+        .filter(word => word.length > 2)
+        .filter(word => ![
             "the","and","for","with","this",
             "that","from","into","about",
             "your","video","post","today"
         ].includes(word));
 
-    words.slice(0,5).forEach(word=>{
-        tags.push("#"+word.replace(/[^a-z0-9]/g,""));
+    words.slice(0,5).forEach(word => {
+        const tag = "#" + word.replace(/[^a-z0-9]/g,"");
+
+        if(tag.length > 1){
+            tags.push(tag);
+        }
     });
 
-    tags=unique(tags.filter(Boolean));
+    tags = unique(tags.filter(Boolean));
 
-    const finalTags=shuffle(tags).slice(0,15);
+    const finalTags = shuffle(tags).slice(0,15);
 
     renderResults(
         "hashtagResults",
